@@ -131,3 +131,5 @@ dmypy.json
 UNet/data-science-bowl-2018/
 
 UNet/lightning_logs/
+
+lightning_logs/
