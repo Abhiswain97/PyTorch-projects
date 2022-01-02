@@ -1,0 +1,10 @@
+torch_summary==1.4.5
+opencv_python_headless==4.5.2.52
+pytorch_lightning==1.4.2
+tqdm==4.59.0
+torchvision==0.9.1
+numpy==1.19.5
+matplotlib==3.3.4
+albumentations==1.1.0
+torch==1.8.1
+torchsummary==1.5.1

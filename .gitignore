@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+UNet/data-science-bowl-2018/
+
+UNet/lightning_logs/
