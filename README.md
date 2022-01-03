@@ -1,4 +1,4 @@
-# PyTorch-P=projects
+# PyTorch-Projects
 
 a repo for self-learning projects in pytorch
 ## Contents: 
