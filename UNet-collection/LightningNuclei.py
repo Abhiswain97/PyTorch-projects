@@ -17,7 +17,10 @@ import pytorch_lightning as pl
 
 from torchsummary import summary
 from pathlib import Path
-from UNet import UNet_2
+from UNet import UNet_2, AttentionUNet
+
+import argparse
+
 
 class NucleiData(Dataset):
     def __init__(
@@ -34,11 +37,11 @@ class NucleiData(Dataset):
 
         if self.transforms is not None:
             transform = self.transforms(image=image)
-        
+
         transformed_image = transform["image"]
         transformed_mask = ToTensorV2()(image=mask)
 
-        return transformed_image, transformed_mask['image']
+        return transformed_image, transformed_mask["image"]
 
     def get_mask(self, masks_gen):
         H, W = 256, 256
@@ -74,53 +77,64 @@ class NucleiDataModule(pl.LightningDataModule):
     def val_dataloader(self):
         return DataLoader(self.val_data, batch_size=8, num_workers=8)
 
+
 class LitNuclei(pl.LightningModule):
-    def __init__(self):
+    def __init__(self, use_attention=True):
         super(LitNuclei, self).__init__()
-        self.model = UNet_2(3, 1)
+        self.model = AttentionUNet(3, 1) if use_attention else UNet_2(3, 1)
         self.loss = nn.BCEWithLogitsLoss()
-        
+
     def configure_optimizers(self):
         return optim.Adam(self.model.parameters())
-    
+
     def forward(self, x):
         return self.model(x)
-    
+
     def training_step(self, batch, batch_idx):
         image, mask = batch
-        
+
         preds = self.forward(image)
-        
-        loss = F.binary_cross_entropy_with_logits(
-            input=preds, target=mask.float()
-        )
-        
-        self.log('train_loss', loss)
-        
+
+        loss = F.binary_cross_entropy_with_logits(input=preds, target=mask.float())
+
+        self.log("train_loss", loss)
+
         return loss
-    
+
     def validation_step(self, batch, batch_idx):
         image, mask = batch
-        
+
         preds = self.forward(image)
-        
-        loss = F.binary_cross_entropy_with_logits(
-            input=preds, target=mask.float()
-        )
-        
-        self.log('val_loss', loss)
-        
+
+        loss = F.binary_cross_entropy_with_logits(input=preds, target=mask.float())
+
+        self.log("val_loss", loss)
+
         return loss
 
-if __name__ == '__main__':
-	model = LitNuclei()
-	dm = NucleiDataModule()
-	
-	trainer = pl.Trainer(
-	    logger=True,
-	    checkpoint_callback=True,
-	    gpus=1,
-	    max_epochs=3,
-	)
 
-	trainer.fit(model, datamodule=dm)
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(
+        prog="Train Unet from scratch model for Nuclei Segmentation",
+    )
+
+    parser.add_argument(
+        "attn",
+        default=True,
+        type=bool,
+        help="Specify it to `False` if you don't want to use Original UNet and not Attention-UNet",
+    )
+    args = parser.parse_args()
+
+    model = LitNuclei(use_attention=args.attn)
+    dm = NucleiDataModule()
+
+    trainer = pl.Trainer(
+        logger=True,
+        checkpoint_callback=True,
+        gpus=1,
+        max_epochs=3,
+    )
+
+    trainer.fit(model, datamodule=dm)
