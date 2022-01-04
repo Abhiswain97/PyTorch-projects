@@ -123,7 +123,7 @@ if __name__ == "__main__":
         "attn",
         default=True,
         type=bool,
-        help="Specify it to `False` if you don't want to use Original UNet and not Attention-UNet",
+        help="Specify it to `False` if you want to use Original UNet and not Attention-UNet",
     )
     args = parser.parse_args()
 

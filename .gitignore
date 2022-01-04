@@ -135,3 +135,5 @@ UNet/lightning_logs/
 lightning_logs/
 
 UNet-collection/data-science-bowl-2018/
+
+*.ipynb
