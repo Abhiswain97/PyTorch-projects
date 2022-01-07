@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     model = LitNuclei(use_attention=args.attn)
     dm = NucleiDataModule()
-
+    
     trainer = pl.Trainer(
         logger=True,
         checkpoint_callback=True,
