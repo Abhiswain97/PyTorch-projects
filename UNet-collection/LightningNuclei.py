@@ -9,7 +9,6 @@ from torchvision.transforms import CenterCrop
 import numpy as np
 from cv2 import cv2, transform
 import matplotlib.pyplot as plt
-from tqdm import tqdm
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 

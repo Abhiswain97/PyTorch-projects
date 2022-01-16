@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
-from torchvision.transforms import CenterCrop
+from torchvision.transforms import CenterCrop, RandomCrop
+from torchvision import models
 from torchsummary import summary
 
 # --------------------------------------------------GENREIC - BLOCKS ------------------------------------------------------------
@@ -200,7 +201,7 @@ class UNet_OG(nn.Module):
     def crop_tensor(self, up_tensor, target_tensor):
         _, _, H, W = up_tensor.shape
 
-        x = CenterCrop(size=(H, W))(target_tensor)
+        x = RandomCrop(size=(H, W))(target_tensor)
 
         return x
 
@@ -323,7 +324,7 @@ class AttentionBlock(nn.Module):
         # the 1x1 Conv
         psi = self.psi(relu)
 
-        # Sigmoid the squash the outputs/attention weights
+        # Sigmoid to squash the outputs/attention weights
         sig = torch.sigmoid(psi)
 
         # Upsample to original size of `x` to perform multiplication
@@ -619,11 +620,7 @@ if __name__ == "__main__":
     attn_unet = AttentionUNet(c_in=3, c_out=1)
     unet3d = UNet3D(c_in=3, c_out=1)
     attn_unet3d = AttentionUNet3D(3, 1)
-    
+
     batch = torch.randn(1, 3, 128, 128, 128)
-    
+
     print(attn_unet3d(batch).size())
-    
-    
-    
-    
