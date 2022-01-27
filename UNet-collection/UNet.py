@@ -621,6 +621,4 @@ if __name__ == "__main__":
     unet3d = UNet3D(c_in=3, c_out=1)
     attn_unet3d = AttentionUNet3D(3, 1)
 
-    batch = torch.randn(1, 3, 128, 128, 128)
-
-    print(attn_unet3d(batch).size())
+    print(unet3d)
