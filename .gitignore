@@ -18,3 +18,12 @@ ResNet/.ipynb_checkpoints/
 UNet-collection/Tests.ipynb
 
 .vscode/
+
+Hindi-Character-Recognition/data/
+
+Hindi-Character-Recognition/__pycache__/
+
+
+Hindi-Character-Recognition/.ipynb_checkpoints/
+
+Hindi-Character-Recognition/src/__pycache__/
