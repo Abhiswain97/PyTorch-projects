@@ -37,15 +37,19 @@ def train_one_epoch(train_dl, model, optimizer, loss):
         # calculate loss
         loss = criterion(logits, labels)
 
-        print(loss.item())
-
         # backpropagate & step
         loss.backward()
         optimizer.step()
 
-        # if batch_idx % 10 == 0:
-        #     print(f"Avg loss for batch: {batch_idx} = {loss.item()}")
-        #     print("-" * 40)
+        if batch_idx % 10 == 0:
+            print(f"Avg loss for batch: {batch_idx} = {loss.item():.3f}")
+            
+            _, preds = torch.max(logits, 1)
+            acc = (preds == labels).float().sum().item()/labels.size(0)
+
+            print(f"Accuracy = {100 * acc:.3f}%")
+            
+            print("-" * 40)
 
 
 train_one_epoch(train_dl=train_dl, model=model, optimizer=optimizer, loss=criterion)
