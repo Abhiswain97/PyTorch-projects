@@ -34,26 +34,18 @@ def train_one_epoch(train_dl, model, optimizer, loss):
         # get the logits
         logits = model(images)
 
-        print(logits)
-
-        break
         # calculate loss
         loss = criterion(logits, labels)
 
-        # keep track of loss
-        avg_train_loss += loss.item() * images.size(0)
+        print(loss.item())
 
         # backpropagate & step
         loss.backward()
         optimizer.step()
 
-        if batch_idx % 10 == 0:
-            print(f"Batch loss for batch {batch_idx + 1}: {loss.item()}")
-
-            _, preds = torch.max(logits, 1)
-            print(
-                f"Accuracy for batch {batch_idx + 1}: {100 * torch.mean(torch.sum(preds == labels))}"
-            )
+        # if batch_idx % 10 == 0:
+        #     print(f"Avg loss for batch: {batch_idx} = {loss.item()}")
+        #     print("-" * 40)
 
 
 train_one_epoch(train_dl=train_dl, model=model, optimizer=optimizer, loss=criterion)

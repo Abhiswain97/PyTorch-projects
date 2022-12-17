@@ -16,6 +16,7 @@ class ResNet18(nn.Module):
 
     def forward(self, x):
         x = self.resnet(x)
+        return x
 
     def freeze_layers(self, param_names):
         for name, param in self.resnet.named_parameters():
