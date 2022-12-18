@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import pytorch_lightning as pl
 
 
-class AlexNet(pl.LightningModule):
+class AlexNet(nn.Module):
     def __init__(self, in_channels=1, num_classes=10):
         super(AlexNet, self).__init__()
         self.network = nn.Sequential(

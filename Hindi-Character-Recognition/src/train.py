@@ -2,75 +2,120 @@ import torch
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 
-from data import train_dl, test_dl
+from data import train_dl, val_dl, test_dl, train_ds, val_ds, test_ds
 from model import ResNet18, HNet
 import config as CFG
 from tqdm import tqdm
 from prettytable import PrettyTable
+from argparse import ArgumentParser
 
-# the model
-model = HNet()
-model.to(CFG.DEVICE)
+def run_one_epoch(ds_sizes, dataloaders, model, optimizer, loss):
 
-# Setting up optimizer and loss
-optimizer = Adam(model.parameters(), lr=1e-5)
-criterion = CrossEntropyLoss()
+    metrics = {}
 
+    for phase in ["train", "val"]:
+        if phase == "train":
+            model.train()
+        else:
+            model.eval()
 
-def train_one_epoch(train_dl, model, optimizer, loss):
+        avg_loss = 0
+        running_corrects = 0
 
-    # putting model in train mode
-    model.train()
+        for (images, labels) in tqdm(dataloaders[phase]):
 
-    avg_train_loss = 0
-    running_corrects = 0
+            images = images.to(CFG.DEVICE)
+            labels = labels.to(CFG.DEVICE)
 
-    for batch in tqdm(train_dl):
+            # Zero the gradients
+            optimizer.zero_grad()
 
-        images, labels = batch
+            # Track history if in phase == "train"
+            with torch.set_grad_enabled(phase == "train"):
+                outputs = model(images)
+                _, preds = torch.max(outputs, 1)
+                loss = criterion(outputs, labels)
 
-        # move the images & labels to device
-        images = images.to(CFG.DEVICE)
-        labels = labels.to(CFG.DEVICE)
+                if phase == "train":
+                    loss.backward()
+                    optimizer.step()
 
-        # zero_grad the optimizer
-        optimizer.zero_grad()
+            avg_loss += loss.item() * images.size(0)
+            running_corrects += torch.sum(preds == labels)
 
-        # get the logits
-        logits = model(images)
+        epoch_loss = avg_loss / ds_sizes[phase]
+        epoch_acc = running_corrects.double() / ds_sizes[phase]
 
-        # calculate loss
-        loss = criterion(logits, labels)
+        # Metrics tracking
+        if phase == "train":
+            metrics["train_loss"] = round(epoch_loss, 3)
+            metrics["train_acc"] = round(100 * epoch_acc.item(), 3)
+        else:
+            metrics["val_loss"] = round(epoch_loss, 3)
+            metrics["val_acc"] = round(100 * epoch_acc.item(), 3)
 
-        avg_train_loss += loss.item() * labels.size(0)
-        _, preds = torch.max(logits, 1)
-        running_corrects += torch.sum(preds == labels)
+    return metrics
 
-        # backpropagate & step
-        loss.backward()
-        optimizer.step()
-
-    avg_loss = avg_train_loss / len(train_dl.sampler)
-    avg_acc = 100 * (running_corrects / len(train_dl.sampler))
-
-    return avg_loss, avg_acc
-
-
-def train():
-
-    table = PrettyTable(field_names=["Epoch", "Train Loss", "Train Accuracy"])
-
-    for i in range(10):
-        avg_loss, avg_acc = train_one_epoch(
-            train_dl=train_dl, model=model, optimizer=optimizer, loss=criterion
-        )
-        table.add_row(row=[i + 1, round(avg_loss, 3), round(avg_acc.item(), 3)])
-        print(table)
-
-    # Save the table to .txt file
-    table_string = table.get_string()
-    with open("results.txt", "w") as f:
-        f.write(table_string)
 
 if __name__ == "__main__":
-    train()
+
+    parser = ArgumentParser(description="Train model for Hindi Character Recognition")
+    parser.add_argument("--epochs", type=int, help="number of epochs", default=5)
+
+    args = parser.parse_args()
+    CFG.EPOCHS = args.epochs
+
+    # table
+    table = PrettyTable(
+        field_names=["Epoch", "Train Loss", "Train Acc", "Val Loss", "Val Acc"]
+    )
+
+    # the model
+    model = HNet()
+    model.to(CFG.DEVICE)
+
+    # Setting up optimizer and loss
+    optimizer = Adam(model.parameters(), lr=1e-5)
+    criterion = CrossEntropyLoss()
+
+    dataloaders = {"train": train_dl, "val": val_dl}
+    ds_sizes = {"train": len(train_ds), "val": len(val_ds)}
+
+    detail = f"""
+    Training details: 
+    ------------------------    
+        Model: HNet()
+        Epochs: {CFG.EPOCHS}
+        Optimizer: {type(optimizer).__name__}
+        Loss: {criterion._get_name()}
+        Train-dataset samples: {len(train_ds)}
+        Validation-dataset samples: {len(val_ds)} 
+    -------------------------
+    """
+
+    print(detail)
+
+    for epoch in range(CFG.EPOCHS):
+        metrics = run_one_epoch(
+            ds_sizes=ds_sizes,
+            dataloaders=dataloaders,
+            model=model,
+            optimizer=optimizer,
+            loss=criterion,
+        )
+
+        table.add_row(
+            row=[
+                epoch + 1,
+                metrics["train_loss"],
+                metrics["train_acc"],
+                metrics["val_loss"],
+                metrics["val_acc"],
+            ]
+        )
+        print(table)
+    
+    # Write results to file
+    with open("results.txt", "w") as f:
+        results = table.get_string()
+        f.write(results)
