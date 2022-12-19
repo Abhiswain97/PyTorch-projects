@@ -54,4 +54,7 @@ class ResNet18(nn.Module):
                 param.requires_grad = False
 
 # Intitialize the model
+#####################################
+## DO NOT CHANGE THE VARIABLE NAME ##
+#####################################
 model = HNet()
