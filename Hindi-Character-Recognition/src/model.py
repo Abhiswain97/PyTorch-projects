@@ -32,7 +32,6 @@ class HNet(nn.Module):
 
         return x
 
-
 class ResNet18(nn.Module):
     def __init__(self, freeze=True):
         super(ResNet18, self).__init__()
@@ -53,3 +52,6 @@ class ResNet18(nn.Module):
         for name, param in self.resnet.named_parameters():
             if name not in param_names:
                 param.requires_grad = False
+
+# Intitialize the model
+model = HNet()

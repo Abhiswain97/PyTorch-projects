@@ -2,8 +2,8 @@ import torch
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
 
-from data import train_dl, val_dl, test_dl, train_ds, val_ds, test_ds
-from model import ResNet18, HNet
+from data import train_dl, val_dl, train_ds, val_ds
+from model import model
 import config as CFG
 from tqdm import tqdm
 from prettytable import PrettyTable
@@ -61,9 +61,11 @@ if __name__ == "__main__":
 
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
     parser.add_argument("--epochs", type=int, help="number of epochs", default=5)
-
+    parser.add_argument("--lr", type=float, help="learning rate", default=1e-5)
+    
     args = parser.parse_args()
     CFG.EPOCHS = args.epochs
+    CFG.LR = args.lr
 
     # table
     table = PrettyTable(
@@ -71,11 +73,10 @@ if __name__ == "__main__":
     )
 
     # the model
-    model = HNet()
     model.to(CFG.DEVICE)
 
     # Setting up optimizer and loss
-    optimizer = Adam(model.parameters(), lr=1e-5)
+    optimizer = Adam(model.parameters(), lr=CFG.LR)
     criterion = CrossEntropyLoss()
 
     dataloaders = {"train": train_dl, "val": val_dl}
@@ -84,12 +85,13 @@ if __name__ == "__main__":
     detail = f"""
     Training details: 
     ------------------------    
-        Model: HNet()
-        Epochs: {CFG.EPOCHS}
-        Optimizer: {type(optimizer).__name__}
-        Loss: {criterion._get_name()}
-        Train-dataset samples: {len(train_ds)}
-        Validation-dataset samples: {len(val_ds)} 
+    Model: {model._get_name()}
+    Epochs: {CFG.EPOCHS}
+    Optimizer: {type(optimizer).__name__}
+    Loss: {criterion._get_name()}
+    Learning Rate: {CFG.LR}
+    Train-dataset samples: {len(train_ds)}
+    Validation-dataset samples: {len(val_ds)} 
     -------------------------
     """
 
