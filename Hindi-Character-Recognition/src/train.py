@@ -1,16 +1,42 @@
 import torch
 from torch.optim import Adam
 from torch.nn import CrossEntropyLoss
-
-from data import train_dl, val_dl, train_ds, val_ds
-from model import model
+from data import train_dl, val_dl, train_ds, val_ds, DataLoader
+from model import model, nn
 import config as CFG
 from tqdm import tqdm
 from prettytable import PrettyTable
 from argparse import ArgumentParser
 
-def run_one_epoch(ds_sizes, dataloaders, model, optimizer, loss):
+from typing import Dict
 
+
+def run_one_epoch(
+    ds_sizes: Dict[str, int],
+    dataloaders: Dict[str, DataLoader],
+    model: nn.Module,
+    optimizer: torch.optim.Optimizer,
+    loss: nn.Module,
+):
+    """
+    Run one complete train-val loop
+
+    Parameter
+    ---------
+
+    ds_sizes: Dictionary containing dataset sizes
+    dataloaders: Dictionary containing dataloaders
+    model: The model
+    optimizer: The optimizer
+    loss: The loss
+
+    Returns
+    -------
+
+    metrics: Dictionary containing Train(loss/accuracy) &
+             Validation(loss/accuracy) 
+
+    """
     metrics = {}
 
     for phase in ["train", "val"]:
@@ -62,7 +88,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
     parser.add_argument("--epochs", type=int, help="number of epochs", default=5)
     parser.add_argument("--lr", type=float, help="learning rate", default=1e-5)
-    
+
     args = parser.parse_args()
     CFG.EPOCHS = args.epochs
     CFG.LR = args.lr
@@ -116,7 +142,7 @@ if __name__ == "__main__":
             ]
         )
         print(table)
-    
+
     # Write results to file
     with open("results.txt", "w") as f:
         results = table.get_string()
