@@ -7,16 +7,18 @@ import config as CFG
 from tqdm import tqdm
 from prettytable import PrettyTable
 from argparse import ArgumentParser
-
+from copy import deepcopy
 from typing import Dict
+import time
 
+best_acc = 0.0
 
 def run_one_epoch(
     ds_sizes: Dict[str, int],
     dataloaders: Dict[str, DataLoader],
     model: nn.Module,
     optimizer: torch.optim.Optimizer,
-    loss: nn.Module,
+    loss: nn.Module
 ):
     """
     Run one complete train-val loop
@@ -37,6 +39,8 @@ def run_one_epoch(
              Validation(loss/accuracy) 
 
     """
+    global best_acc
+    
     metrics = {}
 
     for phase in ["train", "val"]:
@@ -71,6 +75,12 @@ def run_one_epoch(
 
         epoch_loss = avg_loss / ds_sizes[phase]
         epoch_acc = running_corrects.double() / ds_sizes[phase]
+
+        # save best model wts
+        if phase == "val" and epoch_acc > best_acc:
+            best_acc = epoch_acc
+            best_model_wts = deepcopy(model.state_dict())
+            torch.save(best_model_wts, "best_model.pt")
 
         # Metrics tracking
         if phase == "train":
@@ -123,7 +133,12 @@ if __name__ == "__main__":
 
     print(detail)
 
+    start_train = time.time()
+
     for epoch in range(CFG.EPOCHS):
+        
+        start = time.time()
+
         metrics = run_one_epoch(
             ds_sizes=ds_sizes,
             dataloaders=dataloaders,
@@ -131,6 +146,10 @@ if __name__ == "__main__":
             optimizer=optimizer,
             loss=criterion,
         )
+
+        end = time.time() - start
+
+        print(f"Epoch completed in: {end/60} mins")
 
         table.add_row(
             row=[
@@ -147,3 +166,7 @@ if __name__ == "__main__":
     with open("results.txt", "w") as f:
         results = table.get_string()
         f.write(results)
+
+    end_train = time.time() - end
+
+    print(f"Training completed in: {end_train/60} mins")
