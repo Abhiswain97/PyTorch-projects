@@ -3,6 +3,7 @@ import torch
 # Paths
 TRAIN_PATH = "../data/Train"
 TEST_PATH = "../data/Test"
+BEST_MODEL_PATH = "best_model.pt"
 
 # Hyperparameters
 BATCH_SIZE = 32

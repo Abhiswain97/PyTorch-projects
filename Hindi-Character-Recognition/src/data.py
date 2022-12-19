@@ -15,7 +15,7 @@ transforms = {
             tfms.RandomHorizontalFlip(p=0.5),
         ]
     ),
-    "test": tfms.PILToTensor(),
+    "test": tfms.Compose([tfms.PILToTensor(), tfms.ConvertImageDtype(torch.float)]),
 }
 
 # creating the datasets

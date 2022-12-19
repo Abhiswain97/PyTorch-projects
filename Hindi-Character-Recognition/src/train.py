@@ -102,7 +102,7 @@ def run_one_epoch(
         if phase == "val" and epoch_acc > best_acc:
             best_acc = epoch_acc
             best_model_wts = deepcopy(model.state_dict())
-            torch.save(best_model_wts, "best_model.pt")
+            torch.save(best_model_wts, CFG.BEST_MODEL_PATH)
 
         # Metrics tracking
         if phase == "train":
@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
         end = time.time() - start
 
-        print(f"Epoch completed in: {end/60} mins")
+        print(f"Epoch completed in: {round(end/60, 3)} mins")
 
         table.add_row(
             row=[
@@ -191,4 +191,4 @@ if __name__ == "__main__":
 
     end_train = time.time() - start_train
 
-    print(f"Training completed in: {end_train/60} mins")
+    print(f"Training completed in: {round(end_train/60, 3)} mins")
