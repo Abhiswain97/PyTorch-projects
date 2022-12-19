@@ -10,15 +10,27 @@ from argparse import ArgumentParser
 from copy import deepcopy
 from typing import Dict
 import time
+import logging
+
+
+# Set up logger
+logging.basicConfig(
+    filename="train.log",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+    filemode="w",
+)
+
 
 best_acc = 0.0
+
 
 def run_one_epoch(
     ds_sizes: Dict[str, int],
     dataloaders: Dict[str, DataLoader],
     model: nn.Module,
     optimizer: torch.optim.Optimizer,
-    loss: nn.Module
+    loss: nn.Module,
 ):
     """
     Run one complete train-val loop
@@ -36,14 +48,16 @@ def run_one_epoch(
     -------
 
     metrics: Dictionary containing Train(loss/accuracy) &
-             Validation(loss/accuracy) 
+             Validation(loss/accuracy)
 
     """
     global best_acc
-    
+
     metrics = {}
 
     for phase in ["train", "val"]:
+        logging.info(f"{phase} phase")
+
         if phase == "train":
             model.train()
         else:
@@ -52,7 +66,9 @@ def run_one_epoch(
         avg_loss = 0
         running_corrects = 0
 
-        for (images, labels) in tqdm(dataloaders[phase]):
+        for batch_idx, (images, labels) in enumerate(
+            tqdm(dataloaders[phase], total=len(dataloaders[phase]))
+        ):
 
             images = images.to(CFG.DEVICE)
             labels = labels.to(CFG.DEVICE)
@@ -72,6 +88,12 @@ def run_one_epoch(
 
             avg_loss += loss.item() * images.size(0)
             running_corrects += torch.sum(preds == labels)
+
+            if batch_idx % CFG.INTERVAL == 0:
+                corrects = torch.sum(preds == labels)
+
+                logging.info(f"{phase} loss = {loss.item()}")
+                logging.info(f"{phase} accuracy = {100 * corrects/CFG.BATCH_SIZE}")
 
         epoch_loss = avg_loss / ds_sizes[phase]
         epoch_acc = running_corrects.double() / ds_sizes[phase]
@@ -136,7 +158,7 @@ if __name__ == "__main__":
     start_train = time.time()
 
     for epoch in range(CFG.EPOCHS):
-        
+
         start = time.time()
 
         metrics = run_one_epoch(
@@ -167,6 +189,6 @@ if __name__ == "__main__":
         results = table.get_string()
         f.write(results)
 
-    end_train = time.time() - end
+    end_train = time.time() - start_train
 
     print(f"Training completed in: {end_train/60} mins")
