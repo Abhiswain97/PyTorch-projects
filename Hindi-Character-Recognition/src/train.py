@@ -11,7 +11,7 @@ from copy import deepcopy
 from typing import Dict
 import time
 import logging
-
+import sys
 
 # Set up logger
 logging.basicConfig(
@@ -122,12 +122,14 @@ def run_one_epoch(
 if __name__ == "__main__":
 
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
-    parser.add_argument("--epochs", type=int, help="number of epochs", default=5)
-    parser.add_argument("--lr", type=float, help="learning rate", default=1e-5)
+    parser.add_argument("--epochs", type=int, help="number of epochs", default=CFG.EPOCHS)
+    parser.add_argument("--lr", type=float, help="learning rate", default=CFG.LR)
 
     args = parser.parse_args()
-    CFG.EPOCHS = args.epochs
-    CFG.LR = args.lr
+
+    if len(sys.argv) > 1:
+        CFG.EPOCHS = args.epochs
+        CFG.LR = args.lr
 
     # table
     table = PrettyTable(
