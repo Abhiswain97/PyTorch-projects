@@ -56,7 +56,7 @@ def run_one_epoch(
     metrics = {}
 
     for phase in ["train", "val"]:
-        logging.info(f"{phase} phase")
+        logging.info(f"{phase.upper()} phase")
 
         if phase == "train":
             model.train()
@@ -92,8 +92,12 @@ def run_one_epoch(
             if batch_idx % CFG.INTERVAL == 0:
                 corrects = torch.sum(preds == labels)
 
-                logging.info(f"{phase} loss = {loss.item()}")
-                logging.info(f"{phase} accuracy = {100 * corrects/CFG.BATCH_SIZE}")
+                logging.info(
+                    f"{phase.upper()} - Batch {batch_idx} - Loss = {loss.item()}"
+                )
+                logging.info(
+                    f"{phase.upper()} - Batch {batch_idx} - Accuracy = {100 * corrects/CFG.BATCH_SIZE}%"
+                )
 
         epoch_loss = avg_loss / ds_sizes[phase]
         epoch_acc = running_corrects.double() / ds_sizes[phase]
