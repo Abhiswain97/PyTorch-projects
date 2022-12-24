@@ -117,6 +117,41 @@ def run_one_epoch(
     return metrics
 
 
+def train(dataloaders, ds_sizes, model, optimizer, criterion):
+    for epoch in range(CFG.EPOCHS):
+
+        start = time.time()
+
+        metrics = run_one_epoch(
+            epoch=epoch,
+            ds_sizes=ds_sizes,
+            dataloaders=dataloaders,
+            model=model,
+            optimizer=optimizer,
+            loss=criterion,
+        )
+
+        end = time.time() - start
+
+        print(f"Epoch completed in: {round(end/60, 3)} mins")
+
+        table.add_row(
+            row=[
+                epoch + 1,
+                metrics["train_loss"],
+                metrics["train_acc"],
+                metrics["val_loss"],
+                metrics["val_acc"],
+            ]
+        )
+        print(table)
+
+    # Write results to file
+    with open("results.txt", "w") as f:
+        results = table.get_string()
+        f.write(results)
+
+
 if __name__ == "__main__":
 
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
@@ -167,38 +202,13 @@ if __name__ == "__main__":
 
     start_train = time.time()
 
-    for epoch in range(CFG.EPOCHS):
-
-        start = time.time()
-
-        metrics = run_one_epoch(
-            epoch=epoch,
-            ds_sizes=ds_sizes,
-            dataloaders=dataloaders,
-            model=model,
-            optimizer=optimizer,
-            loss=criterion,
-        )
-
-        end = time.time() - start
-
-        print(f"Epoch completed in: {round(end/60, 3)} mins")
-
-        table.add_row(
-            row=[
-                epoch + 1,
-                metrics["train_loss"],
-                metrics["train_acc"],
-                metrics["val_loss"],
-                metrics["val_acc"],
-            ]
-        )
-        print(table)
-
-    # Write results to file
-    with open("results.txt", "w") as f:
-        results = table.get_string()
-        f.write(results)
+    train(
+        dataloaders=dataloaders,
+        ds_sizes=ds_sizes,
+        model=model,
+        optimizer=optimizer,
+        criterion=criterion,
+    )
 
     end_train = time.time() - start_train
 
