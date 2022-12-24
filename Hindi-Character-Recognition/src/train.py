@@ -26,6 +26,7 @@ best_acc = 0.0
 
 
 def run_one_epoch(
+    epoch: int,
     ds_sizes: Dict[str, int],
     dataloaders: Dict[str, DataLoader],
     model: nn.Module,
@@ -93,10 +94,7 @@ def run_one_epoch(
                 corrects = torch.sum(preds == labels)
 
                 logging.info(
-                    f"{phase.upper()} - Batch {batch_idx} - Loss = {loss.item()}"
-                )
-                logging.info(
-                    f"{phase.upper()} - Batch {batch_idx} - Accuracy = {100 * corrects/CFG.BATCH_SIZE}%"
+                    f"Epoch {epoch} - {phase.upper()} - Batch {batch_idx} - Loss = {round(loss.item(), 3)} | Accuracy = {100 * corrects/CFG.BATCH_SIZE}%"
                 )
 
         epoch_loss = avg_loss / ds_sizes[phase]
@@ -122,7 +120,9 @@ def run_one_epoch(
 if __name__ == "__main__":
 
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
-    parser.add_argument("--epochs", type=int, help="number of epochs", default=CFG.EPOCHS)
+    parser.add_argument(
+        "--epochs", type=int, help="number of epochs", default=CFG.EPOCHS
+    )
     parser.add_argument("--lr", type=float, help="learning rate", default=CFG.LR)
 
     args = parser.parse_args()
@@ -154,12 +154,16 @@ if __name__ == "__main__":
     Optimizer: {type(optimizer).__name__}
     Loss: {criterion._get_name()}
     Learning Rate: {CFG.LR}
+    Batch Size: {CFG.BATCH_SIZE}
+    Logging Interval: {CFG.INTERVAL} batches
     Train-dataset samples: {len(train_ds)}
     Validation-dataset samples: {len(val_ds)} 
     -------------------------
     """
 
     print(detail)
+
+    logging.info(detail)
 
     start_train = time.time()
 
@@ -168,6 +172,7 @@ if __name__ == "__main__":
         start = time.time()
 
         metrics = run_one_epoch(
+            epoch=epoch,
             ds_sizes=ds_sizes,
             dataloaders=dataloaders,
             model=model,

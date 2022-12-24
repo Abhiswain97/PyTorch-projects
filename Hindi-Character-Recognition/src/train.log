@@ -1,52 +1,554 @@
-2022-12-20 22:58:27,816 - INFO - TRAIN phase
-2022-12-20 22:58:33,105 - INFO - TRAIN - Batch 0 - Loss = 3.8238370418548584
-2022-12-20 22:58:33,107 - INFO - TRAIN - Batch 0 - Accuracy = 6.25%
-2022-12-20 22:58:36,634 - INFO - TRAIN - Batch 100 - Loss = 3.651263952255249
-2022-12-20 22:58:36,634 - INFO - TRAIN - Batch 100 - Accuracy = 6.25%
-2022-12-20 22:58:40,380 - INFO - TRAIN - Batch 200 - Loss = 3.4292776584625244
-2022-12-20 22:58:40,381 - INFO - TRAIN - Batch 200 - Accuracy = 21.875%
-2022-12-20 22:58:44,046 - INFO - TRAIN - Batch 300 - Loss = 3.326308488845825
-2022-12-20 22:58:44,046 - INFO - TRAIN - Batch 300 - Accuracy = 15.625%
-2022-12-20 22:58:48,058 - INFO - TRAIN - Batch 400 - Loss = 3.0145039558410645
-2022-12-20 22:58:48,058 - INFO - TRAIN - Batch 400 - Accuracy = 28.125%
-2022-12-20 22:58:51,700 - INFO - TRAIN - Batch 500 - Loss = 2.8200700283050537
-2022-12-20 22:58:51,701 - INFO - TRAIN - Batch 500 - Accuracy = 28.125%
-2022-12-20 22:58:55,493 - INFO - TRAIN - Batch 600 - Loss = 2.5945327281951904
-2022-12-20 22:58:55,494 - INFO - TRAIN - Batch 600 - Accuracy = 37.5%
-2022-12-20 22:58:59,088 - INFO - TRAIN - Batch 700 - Loss = 2.154721975326538
-2022-12-20 22:58:59,088 - INFO - TRAIN - Batch 700 - Accuracy = 56.25%
-2022-12-20 22:59:02,665 - INFO - TRAIN - Batch 800 - Loss = 2.207048177719116
-2022-12-20 22:59:02,665 - INFO - TRAIN - Batch 800 - Accuracy = 40.625%
-2022-12-20 22:59:06,157 - INFO - TRAIN - Batch 900 - Loss = 1.9057294130325317
-2022-12-20 22:59:06,157 - INFO - TRAIN - Batch 900 - Accuracy = 59.375%
-2022-12-20 22:59:09,646 - INFO - TRAIN - Batch 1000 - Loss = 2.618875741958618
-2022-12-20 22:59:09,646 - INFO - TRAIN - Batch 1000 - Accuracy = 34.375%
-2022-12-20 22:59:13,095 - INFO - TRAIN - Batch 1100 - Loss = 1.8690292835235596
-2022-12-20 22:59:13,095 - INFO - TRAIN - Batch 1100 - Accuracy = 62.5%
-2022-12-20 22:59:16,521 - INFO - TRAIN - Batch 1200 - Loss = 1.5461677312850952
-2022-12-20 22:59:16,522 - INFO - TRAIN - Batch 1200 - Accuracy = 53.125%
-2022-12-20 22:59:19,934 - INFO - TRAIN - Batch 1300 - Loss = 2.255457878112793
-2022-12-20 22:59:19,934 - INFO - TRAIN - Batch 1300 - Accuracy = 50.0%
-2022-12-20 22:59:23,335 - INFO - TRAIN - Batch 1400 - Loss = 1.6898102760314941
-2022-12-20 22:59:23,335 - INFO - TRAIN - Batch 1400 - Accuracy = 56.25%
-2022-12-20 22:59:26,779 - INFO - TRAIN - Batch 1500 - Loss = 1.9881846904754639
-2022-12-20 22:59:26,780 - INFO - TRAIN - Batch 1500 - Accuracy = 50.0%
-2022-12-20 22:59:30,199 - INFO - TRAIN - Batch 1600 - Loss = 1.4980756044387817
-2022-12-20 22:59:30,199 - INFO - TRAIN - Batch 1600 - Accuracy = 59.375%
-2022-12-20 22:59:33,589 - INFO - TRAIN - Batch 1700 - Loss = 1.399533987045288
-2022-12-20 22:59:33,589 - INFO - TRAIN - Batch 1700 - Accuracy = 59.375%
-2022-12-20 22:59:36,987 - INFO - TRAIN - Batch 1800 - Loss = 1.6058073043823242
-2022-12-20 22:59:36,987 - INFO - TRAIN - Batch 1800 - Accuracy = 50.0%
-2022-12-20 22:59:40,363 - INFO - TRAIN - Batch 1900 - Loss = 1.238680362701416
-2022-12-20 22:59:40,363 - INFO - TRAIN - Batch 1900 - Accuracy = 65.625%
-2022-12-20 22:59:42,172 - INFO - VAL phase
-2022-12-20 22:59:42,205 - INFO - VAL - Batch 0 - Loss = 1.792993187904358
-2022-12-20 22:59:42,205 - INFO - VAL - Batch 0 - Accuracy = 53.125%
-2022-12-20 22:59:44,834 - INFO - VAL - Batch 100 - Loss = 1.4039403200149536
-2022-12-20 22:59:44,834 - INFO - VAL - Batch 100 - Accuracy = 65.625%
-2022-12-20 22:59:47,432 - INFO - VAL - Batch 200 - Loss = 0.8561614751815796
-2022-12-20 22:59:47,432 - INFO - VAL - Batch 200 - Accuracy = 87.5%
-2022-12-20 22:59:50,369 - INFO - VAL - Batch 300 - Loss = 1.3098180294036865
-2022-12-20 22:59:50,369 - INFO - VAL - Batch 300 - Accuracy = 59.375%
-2022-12-20 22:59:53,058 - INFO - VAL - Batch 400 - Loss = 1.8808586597442627
-2022-12-20 22:59:53,058 - INFO - VAL - Batch 400 - Accuracy = 53.125%
+2022-12-24 17:08:28,411 - INFO - 
+    Training details: 
+    ------------------------    
+    Model: HNet
+    Epochs: 20
+    Optimizer: Adam
+    Loss: CrossEntropyLoss
+    Learning Rate: 1e-05
+    Batch Size: 32
+    Logging Interval: 100 batches
+    Train-dataset samples: 62560
+    Validation-dataset samples: 15640 
+    -------------------------
+    
+2022-12-24 17:08:28,411 - INFO - TRAIN phase
+2022-12-24 17:08:31,066 - INFO - Epoch 0 - TRAIN - Batch 0 - Loss = 3.859 | Accuracy = 3.125%
+2022-12-24 17:08:33,903 - INFO - Epoch 0 - TRAIN - Batch 100 - Loss = 3.661 | Accuracy = 0.0%
+2022-12-24 17:08:36,900 - INFO - Epoch 0 - TRAIN - Batch 200 - Loss = 3.524 | Accuracy = 18.75%
+2022-12-24 17:08:40,051 - INFO - Epoch 0 - TRAIN - Batch 300 - Loss = 3.351 | Accuracy = 25.0%
+2022-12-24 17:08:43,259 - INFO - Epoch 0 - TRAIN - Batch 400 - Loss = 2.943 | Accuracy = 43.75%
+2022-12-24 17:08:46,441 - INFO - Epoch 0 - TRAIN - Batch 500 - Loss = 2.843 | Accuracy = 43.75%
+2022-12-24 17:08:49,825 - INFO - Epoch 0 - TRAIN - Batch 600 - Loss = 2.632 | Accuracy = 37.5%
+2022-12-24 17:08:53,038 - INFO - Epoch 0 - TRAIN - Batch 700 - Loss = 2.166 | Accuracy = 53.125%
+2022-12-24 17:08:56,206 - INFO - Epoch 0 - TRAIN - Batch 800 - Loss = 2.382 | Accuracy = 40.625%
+2022-12-24 17:08:59,365 - INFO - Epoch 0 - TRAIN - Batch 900 - Loss = 2.171 | Accuracy = 46.875%
+2022-12-24 17:09:02,560 - INFO - Epoch 0 - TRAIN - Batch 1000 - Loss = 1.887 | Accuracy = 46.875%
+2022-12-24 17:09:05,747 - INFO - Epoch 0 - TRAIN - Batch 1100 - Loss = 1.92 | Accuracy = 43.75%
+2022-12-24 17:09:08,958 - INFO - Epoch 0 - TRAIN - Batch 1200 - Loss = 1.813 | Accuracy = 53.125%
+2022-12-24 17:09:12,274 - INFO - Epoch 0 - TRAIN - Batch 1300 - Loss = 1.608 | Accuracy = 46.875%
+2022-12-24 17:09:15,583 - INFO - Epoch 0 - TRAIN - Batch 1400 - Loss = 1.321 | Accuracy = 62.5%
+2022-12-24 17:09:18,927 - INFO - Epoch 0 - TRAIN - Batch 1500 - Loss = 1.848 | Accuracy = 40.625%
+2022-12-24 17:09:22,147 - INFO - Epoch 0 - TRAIN - Batch 1600 - Loss = 2.019 | Accuracy = 46.875%
+2022-12-24 17:09:25,464 - INFO - Epoch 0 - TRAIN - Batch 1700 - Loss = 1.774 | Accuracy = 59.375%
+2022-12-24 17:09:28,803 - INFO - Epoch 0 - TRAIN - Batch 1800 - Loss = 1.359 | Accuracy = 68.75%
+2022-12-24 17:09:31,916 - INFO - Epoch 0 - TRAIN - Batch 1900 - Loss = 1.703 | Accuracy = 53.125%
+2022-12-24 17:09:33,593 - INFO - VAL phase
+2022-12-24 17:09:33,622 - INFO - Epoch 0 - VAL - Batch 0 - Loss = 1.405 | Accuracy = 62.5%
+2022-12-24 17:09:36,061 - INFO - Epoch 0 - VAL - Batch 100 - Loss = 1.323 | Accuracy = 65.625%
+2022-12-24 17:09:38,484 - INFO - Epoch 0 - VAL - Batch 200 - Loss = 1.482 | Accuracy = 53.125%
+2022-12-24 17:09:40,917 - INFO - Epoch 0 - VAL - Batch 300 - Loss = 1.527 | Accuracy = 62.5%
+2022-12-24 17:09:43,322 - INFO - Epoch 0 - VAL - Batch 400 - Loss = 2.164 | Accuracy = 53.125%
+2022-12-24 17:09:45,440 - INFO - TRAIN phase
+2022-12-24 17:09:45,484 - INFO - Epoch 1 - TRAIN - Batch 0 - Loss = 1.633 | Accuracy = 53.125%
+2022-12-24 17:09:48,592 - INFO - Epoch 1 - TRAIN - Batch 100 - Loss = 1.463 | Accuracy = 56.25%
+2022-12-24 17:09:51,636 - INFO - Epoch 1 - TRAIN - Batch 200 - Loss = 1.47 | Accuracy = 65.625%
+2022-12-24 17:09:54,730 - INFO - Epoch 1 - TRAIN - Batch 300 - Loss = 1.48 | Accuracy = 62.5%
+2022-12-24 17:09:57,772 - INFO - Epoch 1 - TRAIN - Batch 400 - Loss = 1.043 | Accuracy = 75.0%
+2022-12-24 17:10:00,841 - INFO - Epoch 1 - TRAIN - Batch 500 - Loss = 1.749 | Accuracy = 43.75%
+2022-12-24 17:10:03,874 - INFO - Epoch 1 - TRAIN - Batch 600 - Loss = 1.242 | Accuracy = 59.375%
+2022-12-24 17:10:06,916 - INFO - Epoch 1 - TRAIN - Batch 700 - Loss = 1.496 | Accuracy = 62.5%
+2022-12-24 17:10:09,947 - INFO - Epoch 1 - TRAIN - Batch 800 - Loss = 1.61 | Accuracy = 56.25%
+2022-12-24 17:10:13,044 - INFO - Epoch 1 - TRAIN - Batch 900 - Loss = 1.956 | Accuracy = 46.875%
+2022-12-24 17:10:16,180 - INFO - Epoch 1 - TRAIN - Batch 1000 - Loss = 0.832 | Accuracy = 84.375%
+2022-12-24 17:10:19,335 - INFO - Epoch 1 - TRAIN - Batch 1100 - Loss = 1.917 | Accuracy = 50.0%
+2022-12-24 17:10:22,945 - INFO - Epoch 1 - TRAIN - Batch 1200 - Loss = 1.324 | Accuracy = 53.125%
+2022-12-24 17:10:27,416 - INFO - Epoch 1 - TRAIN - Batch 1300 - Loss = 1.678 | Accuracy = 53.125%
+2022-12-24 17:10:30,845 - INFO - Epoch 1 - TRAIN - Batch 1400 - Loss = 1.315 | Accuracy = 59.375%
+2022-12-24 17:10:33,937 - INFO - Epoch 1 - TRAIN - Batch 1500 - Loss = 1.045 | Accuracy = 71.875%
+2022-12-24 17:10:37,038 - INFO - Epoch 1 - TRAIN - Batch 1600 - Loss = 1.296 | Accuracy = 62.5%
+2022-12-24 17:10:40,150 - INFO - Epoch 1 - TRAIN - Batch 1700 - Loss = 1.368 | Accuracy = 65.625%
+2022-12-24 17:10:43,256 - INFO - Epoch 1 - TRAIN - Batch 1800 - Loss = 1.688 | Accuracy = 59.375%
+2022-12-24 17:10:46,361 - INFO - Epoch 1 - TRAIN - Batch 1900 - Loss = 1.33 | Accuracy = 75.0%
+2022-12-24 17:10:48,043 - INFO - VAL phase
+2022-12-24 17:10:48,072 - INFO - Epoch 1 - VAL - Batch 0 - Loss = 1.078 | Accuracy = 78.125%
+2022-12-24 17:10:50,447 - INFO - Epoch 1 - VAL - Batch 100 - Loss = 0.969 | Accuracy = 78.125%
+2022-12-24 17:10:52,819 - INFO - Epoch 1 - VAL - Batch 200 - Loss = 1.126 | Accuracy = 71.875%
+2022-12-24 17:10:55,767 - INFO - Epoch 1 - VAL - Batch 300 - Loss = 1.248 | Accuracy = 65.625%
+2022-12-24 17:10:58,125 - INFO - Epoch 1 - VAL - Batch 400 - Loss = 1.825 | Accuracy = 50.0%
+2022-12-24 17:11:00,224 - INFO - TRAIN phase
+2022-12-24 17:11:00,274 - INFO - Epoch 2 - TRAIN - Batch 0 - Loss = 1.431 | Accuracy = 65.625%
+2022-12-24 17:11:03,420 - INFO - Epoch 2 - TRAIN - Batch 100 - Loss = 0.815 | Accuracy = 71.875%
+2022-12-24 17:11:06,522 - INFO - Epoch 2 - TRAIN - Batch 200 - Loss = 0.623 | Accuracy = 84.375%
+2022-12-24 17:11:09,620 - INFO - Epoch 2 - TRAIN - Batch 300 - Loss = 1.088 | Accuracy = 68.75%
+2022-12-24 17:11:12,716 - INFO - Epoch 2 - TRAIN - Batch 400 - Loss = 1.198 | Accuracy = 62.5%
+2022-12-24 17:11:15,804 - INFO - Epoch 2 - TRAIN - Batch 500 - Loss = 1.191 | Accuracy = 68.75%
+2022-12-24 17:11:18,964 - INFO - Epoch 2 - TRAIN - Batch 600 - Loss = 1.526 | Accuracy = 59.375%
+2022-12-24 17:11:22,096 - INFO - Epoch 2 - TRAIN - Batch 700 - Loss = 0.934 | Accuracy = 68.75%
+2022-12-24 17:11:25,221 - INFO - Epoch 2 - TRAIN - Batch 800 - Loss = 1.316 | Accuracy = 59.375%
+2022-12-24 17:11:28,375 - INFO - Epoch 2 - TRAIN - Batch 900 - Loss = 1.35 | Accuracy = 65.625%
+2022-12-24 17:11:31,501 - INFO - Epoch 2 - TRAIN - Batch 1000 - Loss = 1.285 | Accuracy = 71.875%
+2022-12-24 17:11:34,622 - INFO - Epoch 2 - TRAIN - Batch 1100 - Loss = 1.325 | Accuracy = 62.5%
+2022-12-24 17:11:37,743 - INFO - Epoch 2 - TRAIN - Batch 1200 - Loss = 1.046 | Accuracy = 68.75%
+2022-12-24 17:11:40,863 - INFO - Epoch 2 - TRAIN - Batch 1300 - Loss = 1.109 | Accuracy = 75.0%
+2022-12-24 17:11:43,992 - INFO - Epoch 2 - TRAIN - Batch 1400 - Loss = 0.91 | Accuracy = 68.75%
+2022-12-24 17:11:47,109 - INFO - Epoch 2 - TRAIN - Batch 1500 - Loss = 1.181 | Accuracy = 62.5%
+2022-12-24 17:11:50,241 - INFO - Epoch 2 - TRAIN - Batch 1600 - Loss = 1.041 | Accuracy = 62.5%
+2022-12-24 17:11:53,364 - INFO - Epoch 2 - TRAIN - Batch 1700 - Loss = 1.054 | Accuracy = 78.125%
+2022-12-24 17:11:56,475 - INFO - Epoch 2 - TRAIN - Batch 1800 - Loss = 1.009 | Accuracy = 62.5%
+2022-12-24 17:11:59,610 - INFO - Epoch 2 - TRAIN - Batch 1900 - Loss = 1.183 | Accuracy = 65.625%
+2022-12-24 17:12:01,317 - INFO - VAL phase
+2022-12-24 17:12:01,347 - INFO - Epoch 2 - VAL - Batch 0 - Loss = 0.837 | Accuracy = 81.25%
+2022-12-24 17:12:03,755 - INFO - Epoch 2 - VAL - Batch 100 - Loss = 0.764 | Accuracy = 78.125%
+2022-12-24 17:12:06,356 - INFO - Epoch 2 - VAL - Batch 200 - Loss = 0.882 | Accuracy = 75.0%
+2022-12-24 17:12:09,549 - INFO - Epoch 2 - VAL - Batch 300 - Loss = 1.116 | Accuracy = 75.0%
+2022-12-24 17:12:12,717 - INFO - Epoch 2 - VAL - Batch 400 - Loss = 1.548 | Accuracy = 68.75%
+2022-12-24 17:12:15,520 - INFO - TRAIN phase
+2022-12-24 17:12:15,594 - INFO - Epoch 3 - TRAIN - Batch 0 - Loss = 1.222 | Accuracy = 62.5%
+2022-12-24 17:12:18,473 - INFO - Epoch 3 - TRAIN - Batch 100 - Loss = 1.022 | Accuracy = 71.875%
+2022-12-24 17:12:21,238 - INFO - Epoch 3 - TRAIN - Batch 200 - Loss = 1.446 | Accuracy = 65.625%
+2022-12-24 17:12:24,017 - INFO - Epoch 3 - TRAIN - Batch 300 - Loss = 0.718 | Accuracy = 81.25%
+2022-12-24 17:12:26,835 - INFO - Epoch 3 - TRAIN - Batch 400 - Loss = 0.796 | Accuracy = 75.0%
+2022-12-24 17:12:29,705 - INFO - Epoch 3 - TRAIN - Batch 500 - Loss = 1.035 | Accuracy = 68.75%
+2022-12-24 17:12:32,481 - INFO - Epoch 3 - TRAIN - Batch 600 - Loss = 0.891 | Accuracy = 78.125%
+2022-12-24 17:12:35,246 - INFO - Epoch 3 - TRAIN - Batch 700 - Loss = 0.963 | Accuracy = 71.875%
+2022-12-24 17:12:38,005 - INFO - Epoch 3 - TRAIN - Batch 800 - Loss = 0.448 | Accuracy = 87.5%
+2022-12-24 17:12:40,752 - INFO - Epoch 3 - TRAIN - Batch 900 - Loss = 1.065 | Accuracy = 68.75%
+2022-12-24 17:12:43,520 - INFO - Epoch 3 - TRAIN - Batch 1000 - Loss = 1.097 | Accuracy = 71.875%
+2022-12-24 17:12:46,262 - INFO - Epoch 3 - TRAIN - Batch 1100 - Loss = 0.655 | Accuracy = 84.375%
+2022-12-24 17:12:49,032 - INFO - Epoch 3 - TRAIN - Batch 1200 - Loss = 0.896 | Accuracy = 75.0%
+2022-12-24 17:12:51,878 - INFO - Epoch 3 - TRAIN - Batch 1300 - Loss = 0.89 | Accuracy = 71.875%
+2022-12-24 17:12:54,910 - INFO - Epoch 3 - TRAIN - Batch 1400 - Loss = 0.831 | Accuracy = 68.75%
+2022-12-24 17:12:58,048 - INFO - Epoch 3 - TRAIN - Batch 1500 - Loss = 0.687 | Accuracy = 84.375%
+2022-12-24 17:13:01,125 - INFO - Epoch 3 - TRAIN - Batch 1600 - Loss = 0.579 | Accuracy = 84.375%
+2022-12-24 17:13:04,197 - INFO - Epoch 3 - TRAIN - Batch 1700 - Loss = 0.708 | Accuracy = 78.125%
+2022-12-24 17:13:07,240 - INFO - Epoch 3 - TRAIN - Batch 1800 - Loss = 0.47 | Accuracy = 87.5%
+2022-12-24 17:13:10,285 - INFO - Epoch 3 - TRAIN - Batch 1900 - Loss = 0.64 | Accuracy = 87.5%
+2022-12-24 17:13:11,941 - INFO - VAL phase
+2022-12-24 17:13:11,975 - INFO - Epoch 3 - VAL - Batch 0 - Loss = 0.728 | Accuracy = 81.25%
+2022-12-24 17:13:14,340 - INFO - Epoch 3 - VAL - Batch 100 - Loss = 0.57 | Accuracy = 87.5%
+2022-12-24 17:13:16,683 - INFO - Epoch 3 - VAL - Batch 200 - Loss = 0.746 | Accuracy = 81.25%
+2022-12-24 17:13:19,044 - INFO - Epoch 3 - VAL - Batch 300 - Loss = 0.972 | Accuracy = 84.375%
+2022-12-24 17:13:21,395 - INFO - Epoch 3 - VAL - Batch 400 - Loss = 1.448 | Accuracy = 71.875%
+2022-12-24 17:13:23,567 - INFO - TRAIN phase
+2022-12-24 17:13:23,607 - INFO - Epoch 4 - TRAIN - Batch 0 - Loss = 0.862 | Accuracy = 71.875%
+2022-12-24 17:13:27,436 - INFO - Epoch 4 - TRAIN - Batch 100 - Loss = 0.606 | Accuracy = 78.125%
+2022-12-24 17:13:31,306 - INFO - Epoch 4 - TRAIN - Batch 200 - Loss = 0.503 | Accuracy = 90.625%
+2022-12-24 17:13:34,057 - INFO - Epoch 4 - TRAIN - Batch 300 - Loss = 0.699 | Accuracy = 84.375%
+2022-12-24 17:13:36,849 - INFO - Epoch 4 - TRAIN - Batch 400 - Loss = 1.288 | Accuracy = 59.375%
+2022-12-24 17:13:39,621 - INFO - Epoch 4 - TRAIN - Batch 500 - Loss = 0.518 | Accuracy = 87.5%
+2022-12-24 17:13:42,389 - INFO - Epoch 4 - TRAIN - Batch 600 - Loss = 1.029 | Accuracy = 68.75%
+2022-12-24 17:13:45,253 - INFO - Epoch 4 - TRAIN - Batch 700 - Loss = 0.638 | Accuracy = 81.25%
+2022-12-24 17:13:48,305 - INFO - Epoch 4 - TRAIN - Batch 800 - Loss = 0.837 | Accuracy = 84.375%
+2022-12-24 17:13:51,416 - INFO - Epoch 4 - TRAIN - Batch 900 - Loss = 0.588 | Accuracy = 81.25%
+2022-12-24 17:13:54,516 - INFO - Epoch 4 - TRAIN - Batch 1000 - Loss = 0.933 | Accuracy = 71.875%
+2022-12-24 17:13:58,109 - INFO - Epoch 4 - TRAIN - Batch 1100 - Loss = 1.017 | Accuracy = 81.25%
+2022-12-24 17:14:01,762 - INFO - Epoch 4 - TRAIN - Batch 1200 - Loss = 0.801 | Accuracy = 75.0%
+2022-12-24 17:14:04,893 - INFO - Epoch 4 - TRAIN - Batch 1300 - Loss = 0.929 | Accuracy = 68.75%
+2022-12-24 17:14:08,050 - INFO - Epoch 4 - TRAIN - Batch 1400 - Loss = 0.83 | Accuracy = 75.0%
+2022-12-24 17:14:11,192 - INFO - Epoch 4 - TRAIN - Batch 1500 - Loss = 1.034 | Accuracy = 71.875%
+2022-12-24 17:14:14,328 - INFO - Epoch 4 - TRAIN - Batch 1600 - Loss = 0.86 | Accuracy = 78.125%
+2022-12-24 17:14:17,466 - INFO - Epoch 4 - TRAIN - Batch 1700 - Loss = 0.479 | Accuracy = 90.625%
+2022-12-24 17:14:20,602 - INFO - Epoch 4 - TRAIN - Batch 1800 - Loss = 0.886 | Accuracy = 81.25%
+2022-12-24 17:14:23,742 - INFO - Epoch 4 - TRAIN - Batch 1900 - Loss = 1.082 | Accuracy = 71.875%
+2022-12-24 17:14:25,443 - INFO - VAL phase
+2022-12-24 17:14:25,482 - INFO - Epoch 4 - VAL - Batch 0 - Loss = 0.657 | Accuracy = 78.125%
+2022-12-24 17:14:27,879 - INFO - Epoch 4 - VAL - Batch 100 - Loss = 0.462 | Accuracy = 87.5%
+2022-12-24 17:14:30,263 - INFO - Epoch 4 - VAL - Batch 200 - Loss = 0.634 | Accuracy = 87.5%
+2022-12-24 17:14:32,637 - INFO - Epoch 4 - VAL - Batch 300 - Loss = 0.888 | Accuracy = 84.375%
+2022-12-24 17:14:35,017 - INFO - Epoch 4 - VAL - Batch 400 - Loss = 1.224 | Accuracy = 75.0%
+2022-12-24 17:14:37,101 - INFO - TRAIN phase
+2022-12-24 17:14:37,143 - INFO - Epoch 5 - TRAIN - Batch 0 - Loss = 0.918 | Accuracy = 71.875%
+2022-12-24 17:14:40,425 - INFO - Epoch 5 - TRAIN - Batch 100 - Loss = 1.162 | Accuracy = 65.625%
+2022-12-24 17:14:43,568 - INFO - Epoch 5 - TRAIN - Batch 200 - Loss = 0.433 | Accuracy = 90.625%
+2022-12-24 17:14:46,704 - INFO - Epoch 5 - TRAIN - Batch 300 - Loss = 0.962 | Accuracy = 78.125%
+2022-12-24 17:14:49,839 - INFO - Epoch 5 - TRAIN - Batch 400 - Loss = 0.626 | Accuracy = 81.25%
+2022-12-24 17:14:52,996 - INFO - Epoch 5 - TRAIN - Batch 500 - Loss = 0.687 | Accuracy = 90.625%
+2022-12-24 17:14:56,139 - INFO - Epoch 5 - TRAIN - Batch 600 - Loss = 0.649 | Accuracy = 75.0%
+2022-12-24 17:14:59,281 - INFO - Epoch 5 - TRAIN - Batch 700 - Loss = 1.066 | Accuracy = 71.875%
+2022-12-24 17:15:03,160 - INFO - Epoch 5 - TRAIN - Batch 800 - Loss = 0.532 | Accuracy = 84.375%
+2022-12-24 17:15:07,347 - INFO - Epoch 5 - TRAIN - Batch 900 - Loss = 0.659 | Accuracy = 78.125%
+2022-12-24 17:15:10,591 - INFO - Epoch 5 - TRAIN - Batch 1000 - Loss = 0.572 | Accuracy = 78.125%
+2022-12-24 17:15:13,690 - INFO - Epoch 5 - TRAIN - Batch 1100 - Loss = 0.512 | Accuracy = 78.125%
+2022-12-24 17:15:16,795 - INFO - Epoch 5 - TRAIN - Batch 1200 - Loss = 0.752 | Accuracy = 78.125%
+2022-12-24 17:15:19,895 - INFO - Epoch 5 - TRAIN - Batch 1300 - Loss = 0.819 | Accuracy = 71.875%
+2022-12-24 17:15:23,017 - INFO - Epoch 5 - TRAIN - Batch 1400 - Loss = 0.557 | Accuracy = 84.375%
+2022-12-24 17:15:26,109 - INFO - Epoch 5 - TRAIN - Batch 1500 - Loss = 0.734 | Accuracy = 78.125%
+2022-12-24 17:15:29,216 - INFO - Epoch 5 - TRAIN - Batch 1600 - Loss = 0.846 | Accuracy = 75.0%
+2022-12-24 17:15:32,596 - INFO - Epoch 5 - TRAIN - Batch 1700 - Loss = 0.552 | Accuracy = 84.375%
+2022-12-24 17:15:36,364 - INFO - Epoch 5 - TRAIN - Batch 1800 - Loss = 0.722 | Accuracy = 78.125%
+2022-12-24 17:15:39,475 - INFO - Epoch 5 - TRAIN - Batch 1900 - Loss = 0.589 | Accuracy = 84.375%
+2022-12-24 17:15:41,152 - INFO - VAL phase
+2022-12-24 17:15:41,178 - INFO - Epoch 5 - VAL - Batch 0 - Loss = 0.511 | Accuracy = 87.5%
+2022-12-24 17:15:43,562 - INFO - Epoch 5 - VAL - Batch 100 - Loss = 0.396 | Accuracy = 96.875%
+2022-12-24 17:15:45,922 - INFO - Epoch 5 - VAL - Batch 200 - Loss = 0.501 | Accuracy = 87.5%
+2022-12-24 17:15:48,291 - INFO - Epoch 5 - VAL - Batch 300 - Loss = 0.885 | Accuracy = 78.125%
+2022-12-24 17:15:50,657 - INFO - Epoch 5 - VAL - Batch 400 - Loss = 1.155 | Accuracy = 65.625%
+2022-12-24 17:15:52,852 - INFO - TRAIN phase
+2022-12-24 17:15:52,911 - INFO - Epoch 6 - TRAIN - Batch 0 - Loss = 0.576 | Accuracy = 75.0%
+2022-12-24 17:15:55,714 - INFO - Epoch 6 - TRAIN - Batch 100 - Loss = 0.746 | Accuracy = 75.0%
+2022-12-24 17:15:58,469 - INFO - Epoch 6 - TRAIN - Batch 200 - Loss = 0.269 | Accuracy = 93.75%
+2022-12-24 17:16:01,245 - INFO - Epoch 6 - TRAIN - Batch 300 - Loss = 0.575 | Accuracy = 87.5%
+2022-12-24 17:16:03,996 - INFO - Epoch 6 - TRAIN - Batch 400 - Loss = 0.665 | Accuracy = 78.125%
+2022-12-24 17:16:06,758 - INFO - Epoch 6 - TRAIN - Batch 500 - Loss = 1.301 | Accuracy = 68.75%
+2022-12-24 17:16:09,517 - INFO - Epoch 6 - TRAIN - Batch 600 - Loss = 0.689 | Accuracy = 81.25%
+2022-12-24 17:16:12,275 - INFO - Epoch 6 - TRAIN - Batch 700 - Loss = 0.685 | Accuracy = 75.0%
+2022-12-24 17:16:15,024 - INFO - Epoch 6 - TRAIN - Batch 800 - Loss = 0.863 | Accuracy = 71.875%
+2022-12-24 17:16:17,787 - INFO - Epoch 6 - TRAIN - Batch 900 - Loss = 0.763 | Accuracy = 81.25%
+2022-12-24 17:16:20,561 - INFO - Epoch 6 - TRAIN - Batch 1000 - Loss = 0.678 | Accuracy = 78.125%
+2022-12-24 17:16:23,315 - INFO - Epoch 6 - TRAIN - Batch 1100 - Loss = 0.732 | Accuracy = 68.75%
+2022-12-24 17:16:26,067 - INFO - Epoch 6 - TRAIN - Batch 1200 - Loss = 0.372 | Accuracy = 87.5%
+2022-12-24 17:16:28,833 - INFO - Epoch 6 - TRAIN - Batch 1300 - Loss = 0.733 | Accuracy = 81.25%
+2022-12-24 17:16:31,586 - INFO - Epoch 6 - TRAIN - Batch 1400 - Loss = 0.723 | Accuracy = 84.375%
+2022-12-24 17:16:34,358 - INFO - Epoch 6 - TRAIN - Batch 1500 - Loss = 0.495 | Accuracy = 87.5%
+2022-12-24 17:16:37,111 - INFO - Epoch 6 - TRAIN - Batch 1600 - Loss = 0.732 | Accuracy = 81.25%
+2022-12-24 17:16:39,967 - INFO - Epoch 6 - TRAIN - Batch 1700 - Loss = 0.818 | Accuracy = 75.0%
+2022-12-24 17:16:43,033 - INFO - Epoch 6 - TRAIN - Batch 1800 - Loss = 0.448 | Accuracy = 90.625%
+2022-12-24 17:16:46,143 - INFO - Epoch 6 - TRAIN - Batch 1900 - Loss = 0.669 | Accuracy = 81.25%
+2022-12-24 17:16:47,866 - INFO - VAL phase
+2022-12-24 17:16:47,902 - INFO - Epoch 6 - VAL - Batch 0 - Loss = 0.515 | Accuracy = 84.375%
+2022-12-24 17:16:50,437 - INFO - Epoch 6 - VAL - Batch 100 - Loss = 0.454 | Accuracy = 90.625%
+2022-12-24 17:16:53,405 - INFO - Epoch 6 - VAL - Batch 200 - Loss = 0.521 | Accuracy = 81.25%
+2022-12-24 17:16:56,592 - INFO - Epoch 6 - VAL - Batch 300 - Loss = 0.811 | Accuracy = 84.375%
+2022-12-24 17:16:59,756 - INFO - Epoch 6 - VAL - Batch 400 - Loss = 1.009 | Accuracy = 68.75%
+2022-12-24 17:17:02,597 - INFO - TRAIN phase
+2022-12-24 17:17:02,692 - INFO - Epoch 7 - TRAIN - Batch 0 - Loss = 0.659 | Accuracy = 84.375%
+2022-12-24 17:17:05,513 - INFO - Epoch 7 - TRAIN - Batch 100 - Loss = 0.408 | Accuracy = 90.625%
+2022-12-24 17:17:08,285 - INFO - Epoch 7 - TRAIN - Batch 200 - Loss = 0.658 | Accuracy = 84.375%
+2022-12-24 17:17:11,040 - INFO - Epoch 7 - TRAIN - Batch 300 - Loss = 0.586 | Accuracy = 81.25%
+2022-12-24 17:17:13,807 - INFO - Epoch 7 - TRAIN - Batch 400 - Loss = 0.819 | Accuracy = 78.125%
+2022-12-24 17:17:16,563 - INFO - Epoch 7 - TRAIN - Batch 500 - Loss = 0.512 | Accuracy = 87.5%
+2022-12-24 17:17:19,324 - INFO - Epoch 7 - TRAIN - Batch 600 - Loss = 0.869 | Accuracy = 71.875%
+2022-12-24 17:17:22,077 - INFO - Epoch 7 - TRAIN - Batch 700 - Loss = 0.548 | Accuracy = 87.5%
+2022-12-24 17:17:24,842 - INFO - Epoch 7 - TRAIN - Batch 800 - Loss = 0.778 | Accuracy = 75.0%
+2022-12-24 17:17:27,666 - INFO - Epoch 7 - TRAIN - Batch 900 - Loss = 0.633 | Accuracy = 87.5%
+2022-12-24 17:17:30,543 - INFO - Epoch 7 - TRAIN - Batch 1000 - Loss = 0.59 | Accuracy = 84.375%
+2022-12-24 17:17:33,413 - INFO - Epoch 7 - TRAIN - Batch 1100 - Loss = 0.767 | Accuracy = 78.125%
+2022-12-24 17:17:36,188 - INFO - Epoch 7 - TRAIN - Batch 1200 - Loss = 0.617 | Accuracy = 75.0%
+2022-12-24 17:17:39,069 - INFO - Epoch 7 - TRAIN - Batch 1300 - Loss = 0.621 | Accuracy = 87.5%
+2022-12-24 17:17:42,115 - INFO - Epoch 7 - TRAIN - Batch 1400 - Loss = 0.856 | Accuracy = 84.375%
+2022-12-24 17:17:45,296 - INFO - Epoch 7 - TRAIN - Batch 1500 - Loss = 0.701 | Accuracy = 87.5%
+2022-12-24 17:17:48,455 - INFO - Epoch 7 - TRAIN - Batch 1600 - Loss = 0.417 | Accuracy = 84.375%
+2022-12-24 17:17:51,574 - INFO - Epoch 7 - TRAIN - Batch 1700 - Loss = 0.702 | Accuracy = 81.25%
+2022-12-24 17:17:54,710 - INFO - Epoch 7 - TRAIN - Batch 1800 - Loss = 0.514 | Accuracy = 84.375%
+2022-12-24 17:17:57,843 - INFO - Epoch 7 - TRAIN - Batch 1900 - Loss = 0.465 | Accuracy = 87.5%
+2022-12-24 17:17:59,533 - INFO - VAL phase
+2022-12-24 17:17:59,560 - INFO - Epoch 7 - VAL - Batch 0 - Loss = 0.55 | Accuracy = 84.375%
+2022-12-24 17:18:01,988 - INFO - Epoch 7 - VAL - Batch 100 - Loss = 0.347 | Accuracy = 93.75%
+2022-12-24 17:18:04,360 - INFO - Epoch 7 - VAL - Batch 200 - Loss = 0.481 | Accuracy = 90.625%
+2022-12-24 17:18:06,716 - INFO - Epoch 7 - VAL - Batch 300 - Loss = 0.809 | Accuracy = 84.375%
+2022-12-24 17:18:09,086 - INFO - Epoch 7 - VAL - Batch 400 - Loss = 0.883 | Accuracy = 78.125%
+2022-12-24 17:18:11,172 - INFO - TRAIN phase
+2022-12-24 17:18:11,242 - INFO - Epoch 8 - TRAIN - Batch 0 - Loss = 1.218 | Accuracy = 68.75%
+2022-12-24 17:18:14,387 - INFO - Epoch 8 - TRAIN - Batch 100 - Loss = 0.596 | Accuracy = 75.0%
+2022-12-24 17:18:17,502 - INFO - Epoch 8 - TRAIN - Batch 200 - Loss = 0.801 | Accuracy = 71.875%
+2022-12-24 17:18:20,618 - INFO - Epoch 8 - TRAIN - Batch 300 - Loss = 0.463 | Accuracy = 87.5%
+2022-12-24 17:18:23,747 - INFO - Epoch 8 - TRAIN - Batch 400 - Loss = 0.641 | Accuracy = 78.125%
+2022-12-24 17:18:26,866 - INFO - Epoch 8 - TRAIN - Batch 500 - Loss = 0.204 | Accuracy = 96.875%
+2022-12-24 17:18:30,029 - INFO - Epoch 8 - TRAIN - Batch 600 - Loss = 0.448 | Accuracy = 90.625%
+2022-12-24 17:18:33,192 - INFO - Epoch 8 - TRAIN - Batch 700 - Loss = 0.683 | Accuracy = 78.125%
+2022-12-24 17:18:36,304 - INFO - Epoch 8 - TRAIN - Batch 800 - Loss = 0.837 | Accuracy = 78.125%
+2022-12-24 17:18:39,446 - INFO - Epoch 8 - TRAIN - Batch 900 - Loss = 0.55 | Accuracy = 87.5%
+2022-12-24 17:18:42,561 - INFO - Epoch 8 - TRAIN - Batch 1000 - Loss = 0.53 | Accuracy = 84.375%
+2022-12-24 17:18:45,683 - INFO - Epoch 8 - TRAIN - Batch 1100 - Loss = 0.258 | Accuracy = 93.75%
+2022-12-24 17:18:48,764 - INFO - Epoch 8 - TRAIN - Batch 1200 - Loss = 0.663 | Accuracy = 81.25%
+2022-12-24 17:18:51,846 - INFO - Epoch 8 - TRAIN - Batch 1300 - Loss = 0.702 | Accuracy = 78.125%
+2022-12-24 17:18:54,934 - INFO - Epoch 8 - TRAIN - Batch 1400 - Loss = 0.517 | Accuracy = 84.375%
+2022-12-24 17:18:58,017 - INFO - Epoch 8 - TRAIN - Batch 1500 - Loss = 1.027 | Accuracy = 71.875%
+2022-12-24 17:19:01,121 - INFO - Epoch 8 - TRAIN - Batch 1600 - Loss = 0.433 | Accuracy = 87.5%
+2022-12-24 17:19:04,823 - INFO - Epoch 8 - TRAIN - Batch 1700 - Loss = 0.321 | Accuracy = 96.875%
+2022-12-24 17:19:07,951 - INFO - Epoch 8 - TRAIN - Batch 1800 - Loss = 0.652 | Accuracy = 81.25%
+2022-12-24 17:19:11,057 - INFO - Epoch 8 - TRAIN - Batch 1900 - Loss = 0.593 | Accuracy = 78.125%
+2022-12-24 17:19:12,721 - INFO - VAL phase
+2022-12-24 17:19:12,748 - INFO - Epoch 8 - VAL - Batch 0 - Loss = 0.436 | Accuracy = 87.5%
+2022-12-24 17:19:15,135 - INFO - Epoch 8 - VAL - Batch 100 - Loss = 0.353 | Accuracy = 96.875%
+2022-12-24 17:19:17,490 - INFO - Epoch 8 - VAL - Batch 200 - Loss = 0.406 | Accuracy = 90.625%
+2022-12-24 17:19:19,886 - INFO - Epoch 8 - VAL - Batch 300 - Loss = 0.684 | Accuracy = 87.5%
+2022-12-24 17:19:22,246 - INFO - Epoch 8 - VAL - Batch 400 - Loss = 0.904 | Accuracy = 81.25%
+2022-12-24 17:19:24,346 - INFO - TRAIN phase
+2022-12-24 17:19:24,391 - INFO - Epoch 9 - TRAIN - Batch 0 - Loss = 0.446 | Accuracy = 84.375%
+2022-12-24 17:19:27,532 - INFO - Epoch 9 - TRAIN - Batch 100 - Loss = 0.563 | Accuracy = 87.5%
+2022-12-24 17:19:30,856 - INFO - Epoch 9 - TRAIN - Batch 200 - Loss = 0.604 | Accuracy = 81.25%
+2022-12-24 17:19:33,978 - INFO - Epoch 9 - TRAIN - Batch 300 - Loss = 1.107 | Accuracy = 75.0%
+2022-12-24 17:19:37,105 - INFO - Epoch 9 - TRAIN - Batch 400 - Loss = 0.519 | Accuracy = 87.5%
+2022-12-24 17:19:40,275 - INFO - Epoch 9 - TRAIN - Batch 500 - Loss = 0.465 | Accuracy = 93.75%
+2022-12-24 17:19:43,401 - INFO - Epoch 9 - TRAIN - Batch 600 - Loss = 0.582 | Accuracy = 81.25%
+2022-12-24 17:19:46,530 - INFO - Epoch 9 - TRAIN - Batch 700 - Loss = 0.973 | Accuracy = 75.0%
+2022-12-24 17:19:49,659 - INFO - Epoch 9 - TRAIN - Batch 800 - Loss = 0.374 | Accuracy = 93.75%
+2022-12-24 17:19:52,787 - INFO - Epoch 9 - TRAIN - Batch 900 - Loss = 0.59 | Accuracy = 84.375%
+2022-12-24 17:19:55,943 - INFO - Epoch 9 - TRAIN - Batch 1000 - Loss = 0.477 | Accuracy = 84.375%
+2022-12-24 17:19:59,102 - INFO - Epoch 9 - TRAIN - Batch 1100 - Loss = 0.794 | Accuracy = 78.125%
+2022-12-24 17:20:02,253 - INFO - Epoch 9 - TRAIN - Batch 1200 - Loss = 0.348 | Accuracy = 93.75%
+2022-12-24 17:20:05,398 - INFO - Epoch 9 - TRAIN - Batch 1300 - Loss = 0.702 | Accuracy = 84.375%
+2022-12-24 17:20:08,551 - INFO - Epoch 9 - TRAIN - Batch 1400 - Loss = 0.742 | Accuracy = 84.375%
+2022-12-24 17:20:11,680 - INFO - Epoch 9 - TRAIN - Batch 1500 - Loss = 0.448 | Accuracy = 84.375%
+2022-12-24 17:20:14,849 - INFO - Epoch 9 - TRAIN - Batch 1600 - Loss = 0.518 | Accuracy = 78.125%
+2022-12-24 17:20:17,971 - INFO - Epoch 9 - TRAIN - Batch 1700 - Loss = 0.503 | Accuracy = 87.5%
+2022-12-24 17:20:21,110 - INFO - Epoch 9 - TRAIN - Batch 1800 - Loss = 0.968 | Accuracy = 78.125%
+2022-12-24 17:20:24,243 - INFO - Epoch 9 - TRAIN - Batch 1900 - Loss = 0.538 | Accuracy = 90.625%
+2022-12-24 17:20:25,933 - INFO - VAL phase
+2022-12-24 17:20:25,964 - INFO - Epoch 9 - VAL - Batch 0 - Loss = 0.389 | Accuracy = 90.625%
+2022-12-24 17:20:28,349 - INFO - Epoch 9 - VAL - Batch 100 - Loss = 0.319 | Accuracy = 96.875%
+2022-12-24 17:20:30,722 - INFO - Epoch 9 - VAL - Batch 200 - Loss = 0.344 | Accuracy = 96.875%
+2022-12-24 17:20:33,082 - INFO - Epoch 9 - VAL - Batch 300 - Loss = 0.745 | Accuracy = 81.25%
+2022-12-24 17:20:35,455 - INFO - Epoch 9 - VAL - Batch 400 - Loss = 0.905 | Accuracy = 78.125%
+2022-12-24 17:20:37,540 - INFO - TRAIN phase
+2022-12-24 17:20:37,593 - INFO - Epoch 10 - TRAIN - Batch 0 - Loss = 0.197 | Accuracy = 100.0%
+2022-12-24 17:20:40,774 - INFO - Epoch 10 - TRAIN - Batch 100 - Loss = 0.375 | Accuracy = 84.375%
+2022-12-24 17:20:43,903 - INFO - Epoch 10 - TRAIN - Batch 200 - Loss = 0.481 | Accuracy = 87.5%
+2022-12-24 17:20:47,042 - INFO - Epoch 10 - TRAIN - Batch 300 - Loss = 0.386 | Accuracy = 90.625%
+2022-12-24 17:20:50,169 - INFO - Epoch 10 - TRAIN - Batch 400 - Loss = 0.323 | Accuracy = 90.625%
+2022-12-24 17:20:53,284 - INFO - Epoch 10 - TRAIN - Batch 500 - Loss = 0.712 | Accuracy = 81.25%
+2022-12-24 17:20:56,418 - INFO - Epoch 10 - TRAIN - Batch 600 - Loss = 0.701 | Accuracy = 84.375%
+2022-12-24 17:20:59,541 - INFO - Epoch 10 - TRAIN - Batch 700 - Loss = 0.548 | Accuracy = 87.5%
+2022-12-24 17:21:02,682 - INFO - Epoch 10 - TRAIN - Batch 800 - Loss = 0.832 | Accuracy = 65.625%
+2022-12-24 17:21:05,828 - INFO - Epoch 10 - TRAIN - Batch 900 - Loss = 0.341 | Accuracy = 90.625%
+2022-12-24 17:21:08,968 - INFO - Epoch 10 - TRAIN - Batch 1000 - Loss = 0.724 | Accuracy = 78.125%
+2022-12-24 17:21:12,115 - INFO - Epoch 10 - TRAIN - Batch 1100 - Loss = 0.484 | Accuracy = 90.625%
+2022-12-24 17:21:15,288 - INFO - Epoch 10 - TRAIN - Batch 1200 - Loss = 0.777 | Accuracy = 81.25%
+2022-12-24 17:21:18,409 - INFO - Epoch 10 - TRAIN - Batch 1300 - Loss = 0.875 | Accuracy = 81.25%
+2022-12-24 17:21:21,600 - INFO - Epoch 10 - TRAIN - Batch 1400 - Loss = 0.24 | Accuracy = 93.75%
+2022-12-24 17:21:24,728 - INFO - Epoch 10 - TRAIN - Batch 1500 - Loss = 0.549 | Accuracy = 84.375%
+2022-12-24 17:21:27,861 - INFO - Epoch 10 - TRAIN - Batch 1600 - Loss = 0.406 | Accuracy = 90.625%
+2022-12-24 17:21:31,003 - INFO - Epoch 10 - TRAIN - Batch 1700 - Loss = 0.313 | Accuracy = 93.75%
+2022-12-24 17:21:34,137 - INFO - Epoch 10 - TRAIN - Batch 1800 - Loss = 0.356 | Accuracy = 90.625%
+2022-12-24 17:21:37,292 - INFO - Epoch 10 - TRAIN - Batch 1900 - Loss = 0.94 | Accuracy = 71.875%
+2022-12-24 17:21:38,994 - INFO - VAL phase
+2022-12-24 17:21:39,023 - INFO - Epoch 10 - VAL - Batch 0 - Loss = 0.352 | Accuracy = 93.75%
+2022-12-24 17:21:41,468 - INFO - Epoch 10 - VAL - Batch 100 - Loss = 0.265 | Accuracy = 96.875%
+2022-12-24 17:21:43,879 - INFO - Epoch 10 - VAL - Batch 200 - Loss = 0.301 | Accuracy = 96.875%
+2022-12-24 17:21:46,282 - INFO - Epoch 10 - VAL - Batch 300 - Loss = 0.708 | Accuracy = 84.375%
+2022-12-24 17:21:48,698 - INFO - Epoch 10 - VAL - Batch 400 - Loss = 0.844 | Accuracy = 75.0%
+2022-12-24 17:21:50,827 - INFO - TRAIN phase
+2022-12-24 17:21:50,875 - INFO - Epoch 11 - TRAIN - Batch 0 - Loss = 0.446 | Accuracy = 90.625%
+2022-12-24 17:21:54,045 - INFO - Epoch 11 - TRAIN - Batch 100 - Loss = 0.457 | Accuracy = 81.25%
+2022-12-24 17:21:57,181 - INFO - Epoch 11 - TRAIN - Batch 200 - Loss = 0.323 | Accuracy = 90.625%
+2022-12-24 17:22:00,328 - INFO - Epoch 11 - TRAIN - Batch 300 - Loss = 0.323 | Accuracy = 93.75%
+2022-12-24 17:22:03,538 - INFO - Epoch 11 - TRAIN - Batch 400 - Loss = 0.737 | Accuracy = 84.375%
+2022-12-24 17:22:06,679 - INFO - Epoch 11 - TRAIN - Batch 500 - Loss = 0.255 | Accuracy = 90.625%
+2022-12-24 17:22:09,836 - INFO - Epoch 11 - TRAIN - Batch 600 - Loss = 0.575 | Accuracy = 84.375%
+2022-12-24 17:22:12,990 - INFO - Epoch 11 - TRAIN - Batch 700 - Loss = 0.407 | Accuracy = 84.375%
+2022-12-24 17:22:16,148 - INFO - Epoch 11 - TRAIN - Batch 800 - Loss = 0.824 | Accuracy = 71.875%
+2022-12-24 17:22:19,298 - INFO - Epoch 11 - TRAIN - Batch 900 - Loss = 0.362 | Accuracy = 87.5%
+2022-12-24 17:22:22,461 - INFO - Epoch 11 - TRAIN - Batch 1000 - Loss = 0.463 | Accuracy = 87.5%
+2022-12-24 17:22:25,669 - INFO - Epoch 11 - TRAIN - Batch 1100 - Loss = 0.383 | Accuracy = 90.625%
+2022-12-24 17:22:28,902 - INFO - Epoch 11 - TRAIN - Batch 1200 - Loss = 0.853 | Accuracy = 81.25%
+2022-12-24 17:22:32,120 - INFO - Epoch 11 - TRAIN - Batch 1300 - Loss = 0.226 | Accuracy = 93.75%
+2022-12-24 17:22:35,276 - INFO - Epoch 11 - TRAIN - Batch 1400 - Loss = 0.399 | Accuracy = 84.375%
+2022-12-24 17:22:38,461 - INFO - Epoch 11 - TRAIN - Batch 1500 - Loss = 0.46 | Accuracy = 87.5%
+2022-12-24 17:22:41,635 - INFO - Epoch 11 - TRAIN - Batch 1600 - Loss = 0.646 | Accuracy = 84.375%
+2022-12-24 17:22:44,823 - INFO - Epoch 11 - TRAIN - Batch 1700 - Loss = 0.474 | Accuracy = 84.375%
+2022-12-24 17:22:48,012 - INFO - Epoch 11 - TRAIN - Batch 1800 - Loss = 0.556 | Accuracy = 84.375%
+2022-12-24 17:22:51,129 - INFO - Epoch 11 - TRAIN - Batch 1900 - Loss = 0.6 | Accuracy = 71.875%
+2022-12-24 17:22:52,816 - INFO - VAL phase
+2022-12-24 17:22:52,847 - INFO - Epoch 11 - VAL - Batch 0 - Loss = 0.363 | Accuracy = 93.75%
+2022-12-24 17:22:55,277 - INFO - Epoch 11 - VAL - Batch 100 - Loss = 0.257 | Accuracy = 90.625%
+2022-12-24 17:22:57,659 - INFO - Epoch 11 - VAL - Batch 200 - Loss = 0.282 | Accuracy = 96.875%
+2022-12-24 17:23:00,081 - INFO - Epoch 11 - VAL - Batch 300 - Loss = 0.64 | Accuracy = 84.375%
+2022-12-24 17:23:02,492 - INFO - Epoch 11 - VAL - Batch 400 - Loss = 0.75 | Accuracy = 78.125%
+2022-12-24 17:23:04,585 - INFO - TRAIN phase
+2022-12-24 17:23:04,624 - INFO - Epoch 12 - TRAIN - Batch 0 - Loss = 0.918 | Accuracy = 78.125%
+2022-12-24 17:23:07,699 - INFO - Epoch 12 - TRAIN - Batch 100 - Loss = 0.523 | Accuracy = 84.375%
+2022-12-24 17:23:10,750 - INFO - Epoch 12 - TRAIN - Batch 200 - Loss = 0.505 | Accuracy = 81.25%
+2022-12-24 17:23:13,785 - INFO - Epoch 12 - TRAIN - Batch 300 - Loss = 0.803 | Accuracy = 78.125%
+2022-12-24 17:23:16,816 - INFO - Epoch 12 - TRAIN - Batch 400 - Loss = 0.633 | Accuracy = 78.125%
+2022-12-24 17:23:19,854 - INFO - Epoch 12 - TRAIN - Batch 500 - Loss = 0.536 | Accuracy = 78.125%
+2022-12-24 17:23:22,904 - INFO - Epoch 12 - TRAIN - Batch 600 - Loss = 0.447 | Accuracy = 87.5%
+2022-12-24 17:23:25,939 - INFO - Epoch 12 - TRAIN - Batch 700 - Loss = 0.397 | Accuracy = 90.625%
+2022-12-24 17:23:28,972 - INFO - Epoch 12 - TRAIN - Batch 800 - Loss = 0.557 | Accuracy = 84.375%
+2022-12-24 17:23:32,027 - INFO - Epoch 12 - TRAIN - Batch 900 - Loss = 0.369 | Accuracy = 87.5%
+2022-12-24 17:23:35,190 - INFO - Epoch 12 - TRAIN - Batch 1000 - Loss = 0.535 | Accuracy = 87.5%
+2022-12-24 17:23:38,326 - INFO - Epoch 12 - TRAIN - Batch 1100 - Loss = 0.663 | Accuracy = 75.0%
+2022-12-24 17:23:41,443 - INFO - Epoch 12 - TRAIN - Batch 1200 - Loss = 0.45 | Accuracy = 90.625%
+2022-12-24 17:23:44,558 - INFO - Epoch 12 - TRAIN - Batch 1300 - Loss = 0.473 | Accuracy = 87.5%
+2022-12-24 17:23:47,676 - INFO - Epoch 12 - TRAIN - Batch 1400 - Loss = 0.624 | Accuracy = 87.5%
+2022-12-24 17:23:50,781 - INFO - Epoch 12 - TRAIN - Batch 1500 - Loss = 0.579 | Accuracy = 81.25%
+2022-12-24 17:23:53,891 - INFO - Epoch 12 - TRAIN - Batch 1600 - Loss = 0.452 | Accuracy = 84.375%
+2022-12-24 17:23:56,986 - INFO - Epoch 12 - TRAIN - Batch 1700 - Loss = 0.599 | Accuracy = 84.375%
+2022-12-24 17:24:00,095 - INFO - Epoch 12 - TRAIN - Batch 1800 - Loss = 0.23 | Accuracy = 96.875%
+2022-12-24 17:24:03,237 - INFO - Epoch 12 - TRAIN - Batch 1900 - Loss = 0.623 | Accuracy = 90.625%
+2022-12-24 17:24:04,923 - INFO - VAL phase
+2022-12-24 17:24:04,953 - INFO - Epoch 12 - VAL - Batch 0 - Loss = 0.305 | Accuracy = 90.625%
+2022-12-24 17:24:07,341 - INFO - Epoch 12 - VAL - Batch 100 - Loss = 0.255 | Accuracy = 93.75%
+2022-12-24 17:24:09,686 - INFO - Epoch 12 - VAL - Batch 200 - Loss = 0.284 | Accuracy = 96.875%
+2022-12-24 17:24:12,049 - INFO - Epoch 12 - VAL - Batch 300 - Loss = 0.618 | Accuracy = 87.5%
+2022-12-24 17:24:14,412 - INFO - Epoch 12 - VAL - Batch 400 - Loss = 0.808 | Accuracy = 78.125%
+2022-12-24 17:24:16,492 - INFO - TRAIN phase
+2022-12-24 17:24:16,532 - INFO - Epoch 13 - TRAIN - Batch 0 - Loss = 0.327 | Accuracy = 87.5%
+2022-12-24 17:24:19,655 - INFO - Epoch 13 - TRAIN - Batch 100 - Loss = 1.346 | Accuracy = 71.875%
+2022-12-24 17:24:22,767 - INFO - Epoch 13 - TRAIN - Batch 200 - Loss = 0.495 | Accuracy = 84.375%
+2022-12-24 17:24:25,826 - INFO - Epoch 13 - TRAIN - Batch 300 - Loss = 0.354 | Accuracy = 84.375%
+2022-12-24 17:24:28,893 - INFO - Epoch 13 - TRAIN - Batch 400 - Loss = 0.246 | Accuracy = 96.875%
+2022-12-24 17:24:31,951 - INFO - Epoch 13 - TRAIN - Batch 500 - Loss = 0.219 | Accuracy = 96.875%
+2022-12-24 17:24:35,004 - INFO - Epoch 13 - TRAIN - Batch 600 - Loss = 0.594 | Accuracy = 84.375%
+2022-12-24 17:24:38,087 - INFO - Epoch 13 - TRAIN - Batch 700 - Loss = 0.705 | Accuracy = 87.5%
+2022-12-24 17:24:41,151 - INFO - Epoch 13 - TRAIN - Batch 800 - Loss = 0.324 | Accuracy = 93.75%
+2022-12-24 17:24:44,242 - INFO - Epoch 13 - TRAIN - Batch 900 - Loss = 0.237 | Accuracy = 93.75%
+2022-12-24 17:24:47,306 - INFO - Epoch 13 - TRAIN - Batch 1000 - Loss = 0.517 | Accuracy = 90.625%
+2022-12-24 17:24:50,365 - INFO - Epoch 13 - TRAIN - Batch 1100 - Loss = 0.378 | Accuracy = 87.5%
+2022-12-24 17:24:53,425 - INFO - Epoch 13 - TRAIN - Batch 1200 - Loss = 0.57 | Accuracy = 84.375%
+2022-12-24 17:24:56,490 - INFO - Epoch 13 - TRAIN - Batch 1300 - Loss = 0.355 | Accuracy = 87.5%
+2022-12-24 17:24:59,547 - INFO - Epoch 13 - TRAIN - Batch 1400 - Loss = 0.746 | Accuracy = 78.125%
+2022-12-24 17:25:02,640 - INFO - Epoch 13 - TRAIN - Batch 1500 - Loss = 0.588 | Accuracy = 75.0%
+2022-12-24 17:25:05,728 - INFO - Epoch 13 - TRAIN - Batch 1600 - Loss = 0.217 | Accuracy = 93.75%
+2022-12-24 17:25:08,853 - INFO - Epoch 13 - TRAIN - Batch 1700 - Loss = 0.539 | Accuracy = 87.5%
+2022-12-24 17:25:12,000 - INFO - Epoch 13 - TRAIN - Batch 1800 - Loss = 0.257 | Accuracy = 93.75%
+2022-12-24 17:25:15,151 - INFO - Epoch 13 - TRAIN - Batch 1900 - Loss = 0.708 | Accuracy = 71.875%
+2022-12-24 17:25:16,859 - INFO - VAL phase
+2022-12-24 17:25:16,890 - INFO - Epoch 13 - VAL - Batch 0 - Loss = 0.324 | Accuracy = 93.75%
+2022-12-24 17:25:19,318 - INFO - Epoch 13 - VAL - Batch 100 - Loss = 0.223 | Accuracy = 93.75%
+2022-12-24 17:25:21,878 - INFO - Epoch 13 - VAL - Batch 200 - Loss = 0.247 | Accuracy = 96.875%
+2022-12-24 17:25:24,985 - INFO - Epoch 13 - VAL - Batch 300 - Loss = 0.606 | Accuracy = 87.5%
+2022-12-24 17:25:28,140 - INFO - Epoch 13 - VAL - Batch 400 - Loss = 0.75 | Accuracy = 75.0%
+2022-12-24 17:25:30,931 - INFO - TRAIN phase
+2022-12-24 17:25:31,027 - INFO - Epoch 14 - TRAIN - Batch 0 - Loss = 0.747 | Accuracy = 78.125%
+2022-12-24 17:25:33,840 - INFO - Epoch 14 - TRAIN - Batch 100 - Loss = 0.515 | Accuracy = 87.5%
+2022-12-24 17:25:36,595 - INFO - Epoch 14 - TRAIN - Batch 200 - Loss = 0.401 | Accuracy = 87.5%
+2022-12-24 17:25:39,360 - INFO - Epoch 14 - TRAIN - Batch 300 - Loss = 0.542 | Accuracy = 87.5%
+2022-12-24 17:25:42,128 - INFO - Epoch 14 - TRAIN - Batch 400 - Loss = 0.568 | Accuracy = 90.625%
+2022-12-24 17:25:44,886 - INFO - Epoch 14 - TRAIN - Batch 500 - Loss = 0.576 | Accuracy = 78.125%
+2022-12-24 17:25:47,647 - INFO - Epoch 14 - TRAIN - Batch 600 - Loss = 0.572 | Accuracy = 84.375%
+2022-12-24 17:25:50,406 - INFO - Epoch 14 - TRAIN - Batch 700 - Loss = 0.299 | Accuracy = 87.5%
+2022-12-24 17:25:53,164 - INFO - Epoch 14 - TRAIN - Batch 800 - Loss = 0.445 | Accuracy = 87.5%
+2022-12-24 17:25:55,924 - INFO - Epoch 14 - TRAIN - Batch 900 - Loss = 0.238 | Accuracy = 93.75%
+2022-12-24 17:25:58,668 - INFO - Epoch 14 - TRAIN - Batch 1000 - Loss = 0.234 | Accuracy = 93.75%
+2022-12-24 17:26:01,456 - INFO - Epoch 14 - TRAIN - Batch 1100 - Loss = 0.5 | Accuracy = 81.25%
+2022-12-24 17:26:04,212 - INFO - Epoch 14 - TRAIN - Batch 1200 - Loss = 0.185 | Accuracy = 96.875%
+2022-12-24 17:26:06,968 - INFO - Epoch 14 - TRAIN - Batch 1300 - Loss = 0.439 | Accuracy = 87.5%
+2022-12-24 17:26:09,824 - INFO - Epoch 14 - TRAIN - Batch 1400 - Loss = 0.827 | Accuracy = 75.0%
+2022-12-24 17:26:12,869 - INFO - Epoch 14 - TRAIN - Batch 1500 - Loss = 0.566 | Accuracy = 81.25%
+2022-12-24 17:26:15,971 - INFO - Epoch 14 - TRAIN - Batch 1600 - Loss = 0.335 | Accuracy = 90.625%
+2022-12-24 17:26:19,078 - INFO - Epoch 14 - TRAIN - Batch 1700 - Loss = 0.416 | Accuracy = 87.5%
+2022-12-24 17:26:22,205 - INFO - Epoch 14 - TRAIN - Batch 1800 - Loss = 0.644 | Accuracy = 84.375%
+2022-12-24 17:26:25,291 - INFO - Epoch 14 - TRAIN - Batch 1900 - Loss = 0.37 | Accuracy = 96.875%
+2022-12-24 17:26:26,959 - INFO - VAL phase
+2022-12-24 17:26:26,987 - INFO - Epoch 14 - VAL - Batch 0 - Loss = 0.359 | Accuracy = 90.625%
+2022-12-24 17:26:29,372 - INFO - Epoch 14 - VAL - Batch 100 - Loss = 0.234 | Accuracy = 96.875%
+2022-12-24 17:26:31,727 - INFO - Epoch 14 - VAL - Batch 200 - Loss = 0.243 | Accuracy = 96.875%
+2022-12-24 17:26:34,096 - INFO - Epoch 14 - VAL - Batch 300 - Loss = 0.606 | Accuracy = 84.375%
+2022-12-24 17:26:36,467 - INFO - Epoch 14 - VAL - Batch 400 - Loss = 0.717 | Accuracy = 78.125%
+2022-12-24 17:26:38,548 - INFO - TRAIN phase
+2022-12-24 17:26:38,589 - INFO - Epoch 15 - TRAIN - Batch 0 - Loss = 0.276 | Accuracy = 93.75%
+2022-12-24 17:26:41,696 - INFO - Epoch 15 - TRAIN - Batch 100 - Loss = 0.546 | Accuracy = 78.125%
+2022-12-24 17:26:44,790 - INFO - Epoch 15 - TRAIN - Batch 200 - Loss = 0.586 | Accuracy = 84.375%
+2022-12-24 17:26:47,867 - INFO - Epoch 15 - TRAIN - Batch 300 - Loss = 0.557 | Accuracy = 87.5%
+2022-12-24 17:26:50,946 - INFO - Epoch 15 - TRAIN - Batch 400 - Loss = 0.388 | Accuracy = 93.75%
+2022-12-24 17:26:54,058 - INFO - Epoch 15 - TRAIN - Batch 500 - Loss = 0.419 | Accuracy = 93.75%
+2022-12-24 17:26:57,149 - INFO - Epoch 15 - TRAIN - Batch 600 - Loss = 0.704 | Accuracy = 84.375%
+2022-12-24 17:27:00,244 - INFO - Epoch 15 - TRAIN - Batch 700 - Loss = 0.513 | Accuracy = 81.25%
+2022-12-24 17:27:03,348 - INFO - Epoch 15 - TRAIN - Batch 800 - Loss = 0.261 | Accuracy = 93.75%
+2022-12-24 17:27:06,432 - INFO - Epoch 15 - TRAIN - Batch 900 - Loss = 0.236 | Accuracy = 93.75%
+2022-12-24 17:27:09,581 - INFO - Epoch 15 - TRAIN - Batch 1000 - Loss = 0.162 | Accuracy = 93.75%
+2022-12-24 17:27:12,670 - INFO - Epoch 15 - TRAIN - Batch 1100 - Loss = 0.552 | Accuracy = 84.375%
+2022-12-24 17:27:15,809 - INFO - Epoch 15 - TRAIN - Batch 1200 - Loss = 0.349 | Accuracy = 93.75%
+2022-12-24 17:27:18,910 - INFO - Epoch 15 - TRAIN - Batch 1300 - Loss = 0.323 | Accuracy = 87.5%
+2022-12-24 17:27:22,000 - INFO - Epoch 15 - TRAIN - Batch 1400 - Loss = 0.716 | Accuracy = 78.125%
+2022-12-24 17:27:25,101 - INFO - Epoch 15 - TRAIN - Batch 1500 - Loss = 0.53 | Accuracy = 84.375%
+2022-12-24 17:27:28,290 - INFO - Epoch 15 - TRAIN - Batch 1600 - Loss = 0.762 | Accuracy = 78.125%
+2022-12-24 17:27:31,431 - INFO - Epoch 15 - TRAIN - Batch 1700 - Loss = 0.593 | Accuracy = 81.25%
+2022-12-24 17:27:34,534 - INFO - Epoch 15 - TRAIN - Batch 1800 - Loss = 0.248 | Accuracy = 90.625%
+2022-12-24 17:27:37,655 - INFO - Epoch 15 - TRAIN - Batch 1900 - Loss = 0.369 | Accuracy = 81.25%
+2022-12-24 17:27:39,346 - INFO - VAL phase
+2022-12-24 17:27:39,381 - INFO - Epoch 15 - VAL - Batch 0 - Loss = 0.29 | Accuracy = 90.625%
+2022-12-24 17:27:41,784 - INFO - Epoch 15 - VAL - Batch 100 - Loss = 0.199 | Accuracy = 93.75%
+2022-12-24 17:27:44,147 - INFO - Epoch 15 - VAL - Batch 200 - Loss = 0.205 | Accuracy = 96.875%
+2022-12-24 17:27:46,583 - INFO - Epoch 15 - VAL - Batch 300 - Loss = 0.552 | Accuracy = 90.625%
+2022-12-24 17:27:48,976 - INFO - Epoch 15 - VAL - Batch 400 - Loss = 0.7 | Accuracy = 75.0%
+2022-12-24 17:27:51,072 - INFO - TRAIN phase
+2022-12-24 17:27:51,121 - INFO - Epoch 16 - TRAIN - Batch 0 - Loss = 0.143 | Accuracy = 96.875%
+2022-12-24 17:27:54,242 - INFO - Epoch 16 - TRAIN - Batch 100 - Loss = 0.442 | Accuracy = 84.375%
+2022-12-24 17:27:57,328 - INFO - Epoch 16 - TRAIN - Batch 200 - Loss = 0.427 | Accuracy = 87.5%
+2022-12-24 17:28:00,470 - INFO - Epoch 16 - TRAIN - Batch 300 - Loss = 0.298 | Accuracy = 90.625%
+2022-12-24 17:28:03,533 - INFO - Epoch 16 - TRAIN - Batch 400 - Loss = 0.185 | Accuracy = 93.75%
+2022-12-24 17:28:06,584 - INFO - Epoch 16 - TRAIN - Batch 500 - Loss = 0.361 | Accuracy = 84.375%
+2022-12-24 17:28:09,647 - INFO - Epoch 16 - TRAIN - Batch 600 - Loss = 0.357 | Accuracy = 90.625%
+2022-12-24 17:28:12,686 - INFO - Epoch 16 - TRAIN - Batch 700 - Loss = 0.303 | Accuracy = 90.625%
+2022-12-24 17:28:15,738 - INFO - Epoch 16 - TRAIN - Batch 800 - Loss = 0.249 | Accuracy = 90.625%
+2022-12-24 17:28:18,779 - INFO - Epoch 16 - TRAIN - Batch 900 - Loss = 0.526 | Accuracy = 87.5%
+2022-12-24 17:28:21,819 - INFO - Epoch 16 - TRAIN - Batch 1000 - Loss = 0.433 | Accuracy = 90.625%
+2022-12-24 17:28:24,864 - INFO - Epoch 16 - TRAIN - Batch 1100 - Loss = 0.614 | Accuracy = 75.0%
+2022-12-24 17:28:27,958 - INFO - Epoch 16 - TRAIN - Batch 1200 - Loss = 0.763 | Accuracy = 78.125%
+2022-12-24 17:28:31,020 - INFO - Epoch 16 - TRAIN - Batch 1300 - Loss = 0.253 | Accuracy = 96.875%
+2022-12-24 17:28:34,094 - INFO - Epoch 16 - TRAIN - Batch 1400 - Loss = 0.456 | Accuracy = 87.5%
+2022-12-24 17:28:37,143 - INFO - Epoch 16 - TRAIN - Batch 1500 - Loss = 0.492 | Accuracy = 90.625%
+2022-12-24 17:28:40,195 - INFO - Epoch 16 - TRAIN - Batch 1600 - Loss = 0.435 | Accuracy = 84.375%
+2022-12-24 17:28:43,229 - INFO - Epoch 16 - TRAIN - Batch 1700 - Loss = 0.369 | Accuracy = 93.75%
+2022-12-24 17:28:46,296 - INFO - Epoch 16 - TRAIN - Batch 1800 - Loss = 0.247 | Accuracy = 93.75%
+2022-12-24 17:28:49,434 - INFO - Epoch 16 - TRAIN - Batch 1900 - Loss = 0.515 | Accuracy = 81.25%
+2022-12-24 17:28:51,127 - INFO - VAL phase
+2022-12-24 17:28:51,163 - INFO - Epoch 16 - VAL - Batch 0 - Loss = 0.338 | Accuracy = 90.625%
+2022-12-24 17:28:53,646 - INFO - Epoch 16 - VAL - Batch 100 - Loss = 0.241 | Accuracy = 90.625%
+2022-12-24 17:28:56,461 - INFO - Epoch 16 - VAL - Batch 200 - Loss = 0.231 | Accuracy = 96.875%
+2022-12-24 17:28:59,660 - INFO - Epoch 16 - VAL - Batch 300 - Loss = 0.517 | Accuracy = 87.5%
+2022-12-24 17:29:02,869 - INFO - Epoch 16 - VAL - Batch 400 - Loss = 0.649 | Accuracy = 78.125%
+2022-12-24 17:29:05,698 - INFO - TRAIN phase
+2022-12-24 17:29:05,791 - INFO - Epoch 17 - TRAIN - Batch 0 - Loss = 0.184 | Accuracy = 93.75%
+2022-12-24 17:29:08,575 - INFO - Epoch 17 - TRAIN - Batch 100 - Loss = 0.673 | Accuracy = 75.0%
+2022-12-24 17:29:11,322 - INFO - Epoch 17 - TRAIN - Batch 200 - Loss = 0.272 | Accuracy = 93.75%
+2022-12-24 17:29:14,079 - INFO - Epoch 17 - TRAIN - Batch 300 - Loss = 0.257 | Accuracy = 90.625%
+2022-12-24 17:29:16,846 - INFO - Epoch 17 - TRAIN - Batch 400 - Loss = 0.533 | Accuracy = 81.25%
+2022-12-24 17:29:19,602 - INFO - Epoch 17 - TRAIN - Batch 500 - Loss = 0.209 | Accuracy = 96.875%
+2022-12-24 17:29:22,358 - INFO - Epoch 17 - TRAIN - Batch 600 - Loss = 0.414 | Accuracy = 90.625%
+2022-12-24 17:29:25,120 - INFO - Epoch 17 - TRAIN - Batch 700 - Loss = 0.727 | Accuracy = 71.875%
+2022-12-24 17:29:27,872 - INFO - Epoch 17 - TRAIN - Batch 800 - Loss = 0.236 | Accuracy = 90.625%
+2022-12-24 17:29:30,648 - INFO - Epoch 17 - TRAIN - Batch 900 - Loss = 0.35 | Accuracy = 90.625%
+2022-12-24 17:29:33,413 - INFO - Epoch 17 - TRAIN - Batch 1000 - Loss = 0.399 | Accuracy = 87.5%
+2022-12-24 17:29:36,170 - INFO - Epoch 17 - TRAIN - Batch 1100 - Loss = 0.355 | Accuracy = 87.5%
+2022-12-24 17:29:38,937 - INFO - Epoch 17 - TRAIN - Batch 1200 - Loss = 0.403 | Accuracy = 87.5%
+2022-12-24 17:29:41,765 - INFO - Epoch 17 - TRAIN - Batch 1300 - Loss = 0.637 | Accuracy = 84.375%
+2022-12-24 17:29:44,785 - INFO - Epoch 17 - TRAIN - Batch 1400 - Loss = 0.536 | Accuracy = 84.375%
+2022-12-24 17:29:47,874 - INFO - Epoch 17 - TRAIN - Batch 1500 - Loss = 0.169 | Accuracy = 96.875%
+2022-12-24 17:29:50,982 - INFO - Epoch 17 - TRAIN - Batch 1600 - Loss = 0.331 | Accuracy = 87.5%
+2022-12-24 17:29:54,095 - INFO - Epoch 17 - TRAIN - Batch 1700 - Loss = 0.243 | Accuracy = 93.75%
+2022-12-24 17:29:57,177 - INFO - Epoch 17 - TRAIN - Batch 1800 - Loss = 0.297 | Accuracy = 87.5%
+2022-12-24 17:30:00,215 - INFO - Epoch 17 - TRAIN - Batch 1900 - Loss = 0.41 | Accuracy = 87.5%
+2022-12-24 17:30:01,866 - INFO - VAL phase
+2022-12-24 17:30:01,894 - INFO - Epoch 17 - VAL - Batch 0 - Loss = 0.274 | Accuracy = 96.875%
+2022-12-24 17:30:04,262 - INFO - Epoch 17 - VAL - Batch 100 - Loss = 0.186 | Accuracy = 93.75%
+2022-12-24 17:30:06,752 - INFO - Epoch 17 - VAL - Batch 200 - Loss = 0.19 | Accuracy = 96.875%
+2022-12-24 17:30:09,638 - INFO - Epoch 17 - VAL - Batch 300 - Loss = 0.496 | Accuracy = 90.625%
+2022-12-24 17:30:11,930 - INFO - Epoch 17 - VAL - Batch 400 - Loss = 0.592 | Accuracy = 81.25%
+2022-12-24 17:30:13,949 - INFO - TRAIN phase
+2022-12-24 17:30:13,988 - INFO - Epoch 18 - TRAIN - Batch 0 - Loss = 0.536 | Accuracy = 78.125%
+2022-12-24 17:30:16,760 - INFO - Epoch 18 - TRAIN - Batch 100 - Loss = 0.491 | Accuracy = 84.375%
+2022-12-24 17:30:19,525 - INFO - Epoch 18 - TRAIN - Batch 200 - Loss = 0.377 | Accuracy = 93.75%
+2022-12-24 17:30:22,280 - INFO - Epoch 18 - TRAIN - Batch 300 - Loss = 0.658 | Accuracy = 81.25%
+2022-12-24 17:30:25,037 - INFO - Epoch 18 - TRAIN - Batch 400 - Loss = 0.387 | Accuracy = 84.375%
+2022-12-24 17:30:27,794 - INFO - Epoch 18 - TRAIN - Batch 500 - Loss = 0.622 | Accuracy = 87.5%
+2022-12-24 17:30:30,571 - INFO - Epoch 18 - TRAIN - Batch 600 - Loss = 0.368 | Accuracy = 84.375%
+2022-12-24 17:30:33,328 - INFO - Epoch 18 - TRAIN - Batch 700 - Loss = 0.311 | Accuracy = 93.75%
+2022-12-24 17:30:36,086 - INFO - Epoch 18 - TRAIN - Batch 800 - Loss = 0.973 | Accuracy = 68.75%
+2022-12-24 17:30:38,906 - INFO - Epoch 18 - TRAIN - Batch 900 - Loss = 0.474 | Accuracy = 87.5%
+2022-12-24 17:30:41,917 - INFO - Epoch 18 - TRAIN - Batch 1000 - Loss = 0.327 | Accuracy = 90.625%
+2022-12-24 17:30:45,063 - INFO - Epoch 18 - TRAIN - Batch 1100 - Loss = 0.293 | Accuracy = 90.625%
+2022-12-24 17:30:48,171 - INFO - Epoch 18 - TRAIN - Batch 1200 - Loss = 0.54 | Accuracy = 78.125%
+2022-12-24 17:30:51,268 - INFO - Epoch 18 - TRAIN - Batch 1300 - Loss = 0.219 | Accuracy = 96.875%
+2022-12-24 17:30:54,372 - INFO - Epoch 18 - TRAIN - Batch 1400 - Loss = 0.389 | Accuracy = 84.375%
+2022-12-24 17:30:57,488 - INFO - Epoch 18 - TRAIN - Batch 1500 - Loss = 0.637 | Accuracy = 81.25%
+2022-12-24 17:31:00,621 - INFO - Epoch 18 - TRAIN - Batch 1600 - Loss = 0.299 | Accuracy = 93.75%
+2022-12-24 17:31:03,731 - INFO - Epoch 18 - TRAIN - Batch 1700 - Loss = 0.175 | Accuracy = 93.75%
+2022-12-24 17:31:06,829 - INFO - Epoch 18 - TRAIN - Batch 1800 - Loss = 0.466 | Accuracy = 90.625%
+2022-12-24 17:31:09,937 - INFO - Epoch 18 - TRAIN - Batch 1900 - Loss = 0.184 | Accuracy = 96.875%
+2022-12-24 17:31:11,616 - INFO - VAL phase
+2022-12-24 17:31:11,646 - INFO - Epoch 18 - VAL - Batch 0 - Loss = 0.282 | Accuracy = 90.625%
+2022-12-24 17:31:14,033 - INFO - Epoch 18 - VAL - Batch 100 - Loss = 0.202 | Accuracy = 93.75%
+2022-12-24 17:31:16,396 - INFO - Epoch 18 - VAL - Batch 200 - Loss = 0.225 | Accuracy = 96.875%
+2022-12-24 17:31:18,752 - INFO - Epoch 18 - VAL - Batch 300 - Loss = 0.527 | Accuracy = 90.625%
+2022-12-24 17:31:21,134 - INFO - Epoch 18 - VAL - Batch 400 - Loss = 0.609 | Accuracy = 84.375%
+2022-12-24 17:31:23,223 - INFO - TRAIN phase
+2022-12-24 17:31:23,263 - INFO - Epoch 19 - TRAIN - Batch 0 - Loss = 0.485 | Accuracy = 87.5%
+2022-12-24 17:31:26,379 - INFO - Epoch 19 - TRAIN - Batch 100 - Loss = 0.689 | Accuracy = 81.25%
+2022-12-24 17:31:29,492 - INFO - Epoch 19 - TRAIN - Batch 200 - Loss = 0.164 | Accuracy = 96.875%
+2022-12-24 17:31:32,622 - INFO - Epoch 19 - TRAIN - Batch 300 - Loss = 0.33 | Accuracy = 87.5%
+2022-12-24 17:31:35,720 - INFO - Epoch 19 - TRAIN - Batch 400 - Loss = 0.288 | Accuracy = 90.625%
+2022-12-24 17:31:38,825 - INFO - Epoch 19 - TRAIN - Batch 500 - Loss = 0.203 | Accuracy = 96.875%
+2022-12-24 17:31:41,920 - INFO - Epoch 19 - TRAIN - Batch 600 - Loss = 0.367 | Accuracy = 93.75%
+2022-12-24 17:31:45,031 - INFO - Epoch 19 - TRAIN - Batch 700 - Loss = 0.378 | Accuracy = 93.75%
+2022-12-24 17:31:48,126 - INFO - Epoch 19 - TRAIN - Batch 800 - Loss = 0.434 | Accuracy = 87.5%
+2022-12-24 17:31:51,225 - INFO - Epoch 19 - TRAIN - Batch 900 - Loss = 0.33 | Accuracy = 93.75%
+2022-12-24 17:31:54,319 - INFO - Epoch 19 - TRAIN - Batch 1000 - Loss = 0.26 | Accuracy = 96.875%
+2022-12-24 17:31:57,422 - INFO - Epoch 19 - TRAIN - Batch 1100 - Loss = 0.235 | Accuracy = 93.75%
+2022-12-24 17:32:00,543 - INFO - Epoch 19 - TRAIN - Batch 1200 - Loss = 0.428 | Accuracy = 90.625%
+2022-12-24 17:32:03,645 - INFO - Epoch 19 - TRAIN - Batch 1300 - Loss = 0.377 | Accuracy = 87.5%
+2022-12-24 17:32:06,734 - INFO - Epoch 19 - TRAIN - Batch 1400 - Loss = 0.251 | Accuracy = 93.75%
+2022-12-24 17:32:09,829 - INFO - Epoch 19 - TRAIN - Batch 1500 - Loss = 0.267 | Accuracy = 93.75%
+2022-12-24 17:32:12,931 - INFO - Epoch 19 - TRAIN - Batch 1600 - Loss = 0.223 | Accuracy = 96.875%
+2022-12-24 17:32:16,025 - INFO - Epoch 19 - TRAIN - Batch 1700 - Loss = 0.412 | Accuracy = 90.625%
+2022-12-24 17:32:19,158 - INFO - Epoch 19 - TRAIN - Batch 1800 - Loss = 0.414 | Accuracy = 90.625%
+2022-12-24 17:32:22,252 - INFO - Epoch 19 - TRAIN - Batch 1900 - Loss = 0.248 | Accuracy = 96.875%
+2022-12-24 17:32:23,926 - INFO - VAL phase
+2022-12-24 17:32:23,956 - INFO - Epoch 19 - VAL - Batch 0 - Loss = 0.242 | Accuracy = 90.625%
+2022-12-24 17:32:26,384 - INFO - Epoch 19 - VAL - Batch 100 - Loss = 0.18 | Accuracy = 96.875%
+2022-12-24 17:32:28,814 - INFO - Epoch 19 - VAL - Batch 200 - Loss = 0.185 | Accuracy = 96.875%
+2022-12-24 17:32:31,260 - INFO - Epoch 19 - VAL - Batch 300 - Loss = 0.499 | Accuracy = 90.625%
+2022-12-24 17:32:33,638 - INFO - Epoch 19 - VAL - Batch 400 - Loss = 0.558 | Accuracy = 84.375%
