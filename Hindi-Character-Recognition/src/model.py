@@ -1,7 +1,6 @@
 from torchvision.models import resnet18
 import torch.nn as nn
 import torch.nn.functional as F
-import torch
 
 
 def calculate_conv_output(IH, IW, KH, KW, P, S):
@@ -9,7 +8,7 @@ def calculate_conv_output(IH, IW, KH, KW, P, S):
 
 
 class HNet(nn.Module):
-    def __init__(self) -> None:
+    def __init__(self, num_classses) -> None:
         super().__init__()
 
         # 32 x 32 x 3 => 28 x 28 x 16
@@ -18,8 +17,8 @@ class HNet(nn.Module):
         # 28 x 28 x 16 => 26 x 26 x 32
         self.conv2 = nn.Conv2d(16, 32, kernel_size=(3, 3))
 
-        # 26 x 26 x 32 => 46
-        self.fc1 = nn.Linear(26 * 26 * 32, 46)
+        # 26 x 26 x 32 => num_classes
+        self.fc1 = nn.Linear(26 * 26 * 32, num_classses)
 
         self.dropout = nn.Dropout(p=0.5)
 
@@ -52,10 +51,3 @@ class ResNet18(nn.Module):
     def freeze_layers(self):
         for param in self.resnet.parameters():
             param.requires_grad = False
-
-
-# Intitialize the model
-#####################################
-## DO NOT CHANGE THE VARIABLE NAME ##
-#####################################
-model = HNet()

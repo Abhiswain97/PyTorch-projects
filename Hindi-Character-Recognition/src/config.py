@@ -1,9 +1,15 @@
 import torch
+from pathlib import Path
 
 # Paths
-TRAIN_PATH = "../data/Train"
-TEST_PATH = "../data/Test"
-BEST_MODEL_PATH = "best_model.pt"
+BASE_PATH = Path("..") 
+TRAIN_VYANJAN_PATH = BASE_PATH / "data"/ "Train_vyanjan"
+TEST_VYANJAN_PATH = BASE_PATH / "data" / "Test_vyanjan"
+TRAIN_DIGIT_PATH = BASE_PATH / "data" / "Train_digits"
+TEST_DIGIT_PATH = BASE_PATH / "data" / "Test_digits"
+BEST_MODEL_VYANJAN = BASE_PATH / "models" / "best_vyanjan_model.pt"
+BEST_MODEL_DIGIT = BASE_PATH / "models" / "best_digit_model.pt"
+BEST_MODEL_PATH = ""
 
 # Hyperparameters
 BATCH_SIZE = 32

@@ -1,10 +1,12 @@
 import torch
-from torch.optim import Adam
+import torch.nn as nn
+from torch.optim import SGD, lr_scheduler
 from torch.nn import CrossEntropyLoss
-from data import train_dl, val_dl, train_ds, val_ds, DataLoader
-from model import model, nn
+from torch.utils.data import DataLoader, random_split
+from torchvision.datasets import ImageFolder
+from model import HNet
 import config as CFG
-from tqdm import tqdm
+from tqdm.auto import tqdm
 from prettytable import PrettyTable
 from argparse import ArgumentParser
 from copy import deepcopy
@@ -12,6 +14,12 @@ from typing import Dict
 import time
 import logging
 import sys
+from data import transforms
+from pathlib import Path
+
+# check is models folder exists
+(CFG.BASE_PATH / "models").mkdir(exist_ok=True)
+
 
 # Set up logger
 logging.basicConfig(
@@ -32,6 +40,7 @@ def run_one_epoch(
     model: nn.Module,
     optimizer: torch.optim.Optimizer,
     loss: nn.Module,
+    scheduler: torch.optim.lr_scheduler,
 ):
     """
     Run one complete train-val loop
@@ -100,6 +109,10 @@ def run_one_epoch(
         epoch_loss = avg_loss / ds_sizes[phase]
         epoch_acc = running_corrects.double() / ds_sizes[phase]
 
+        # step the scheduler
+        if phase == "train":
+            scheduler.step()
+
         # save best model wts
         if phase == "val" and epoch_acc > best_acc:
             best_acc = epoch_acc
@@ -117,7 +130,7 @@ def run_one_epoch(
     return metrics
 
 
-def train(dataloaders, ds_sizes, model, optimizer, criterion):
+def train(dataloaders, ds_sizes, model, optimizer, criterion, scheduler):
     for epoch in range(CFG.EPOCHS):
 
         start = time.time()
@@ -129,6 +142,7 @@ def train(dataloaders, ds_sizes, model, optimizer, criterion):
             model=model,
             optimizer=optimizer,
             loss=criterion,
+            scheduler=scheduler,
         )
 
         end = time.time() - start
@@ -154,17 +168,47 @@ def train(dataloaders, ds_sizes, model, optimizer, criterion):
 
 if __name__ == "__main__":
 
+    TRAIN_PATH, TEST_PATH, BEST_MODEL = "", "", ""
+
     parser = ArgumentParser(description="Train model for Hindi Character Recognition")
     parser.add_argument(
         "--epochs", type=int, help="number of epochs", default=CFG.EPOCHS
     )
     parser.add_argument("--lr", type=float, help="learning rate", default=CFG.LR)
+    parser.add_argument(
+        "--model_type",
+        type=str,
+        help="Type of model (vyanjan/digit)",
+        default="vyanjan",
+    )
 
     args = parser.parse_args()
+
+    if args.model_type == "digit":
+        model = HNet(num_classses=10)
+        TRAIN_PATH = CFG.TRAIN_DIGIT_PATH
+        CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_DIGIT
+    else:
+        model = HNet(num_classses=36)
+        TRAIN_PATH = CFG.TRAIN_VYANJAN_PATH
+        CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_VYANJAN
+
+    # creating the datasets
+    train_ds = ImageFolder(root=TRAIN_PATH, transform=transforms["train"])
+
+    # Train/val splitting
+    lengths = [int(len(train_ds) * 0.8), len(train_ds) - int(len(train_ds) * 0.8)]
+    train_ds, val_ds = random_split(dataset=train_ds, lengths=lengths)
+
+    # creating the dataloaders
+    train_dl = DataLoader(dataset=train_ds, batch_size=CFG.BATCH_SIZE, shuffle=True)
+    val_dl = DataLoader(dataset=val_ds, batch_size=CFG.BATCH_SIZE)
 
     if len(sys.argv) > 1:
         CFG.EPOCHS = args.epochs
         CFG.LR = args.lr
+
+    model = HNet(num_classses=36)
 
     # table
     table = PrettyTable(
@@ -175,8 +219,12 @@ if __name__ == "__main__":
     model.to(CFG.DEVICE)
 
     # Setting up optimizer and loss
-    optimizer = Adam(model.parameters(), lr=CFG.LR)
+    optimizer = SGD(model.parameters(), lr=CFG.LR)
     criterion = CrossEntropyLoss()
+
+    scheduler = lr_scheduler.CyclicLR(
+        optimizer=optimizer, base_lr=1e-5, max_lr=0.1, verbose=True
+    )
 
     dataloaders = {"train": train_dl, "val": val_dl}
     ds_sizes = {"train": len(train_ds), "val": len(val_ds)}
@@ -185,10 +233,12 @@ if __name__ == "__main__":
     Training details: 
     ------------------------    
     Model: {model._get_name()}
+    Model Type: {args.model_type}
     Epochs: {CFG.EPOCHS}
     Optimizer: {type(optimizer).__name__}
     Loss: {criterion._get_name()}
     Learning Rate: {CFG.LR}
+    Learning Rate Scheduler: {scheduler.__str__()}
     Batch Size: {CFG.BATCH_SIZE}
     Logging Interval: {CFG.INTERVAL} batches
     Train-dataset samples: {len(train_ds)}
@@ -208,6 +258,7 @@ if __name__ == "__main__":
         model=model,
         optimizer=optimizer,
         criterion=criterion,
+        scheduler=scheduler,
     )
 
     end_train = time.time() - start_train
