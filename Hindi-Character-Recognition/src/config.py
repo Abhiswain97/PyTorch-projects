@@ -2,8 +2,8 @@ import torch
 from pathlib import Path
 
 # Paths
-BASE_PATH = Path("..") 
-TRAIN_VYANJAN_PATH = BASE_PATH / "data"/ "Train_vyanjan"
+BASE_PATH = Path("..")
+TRAIN_VYANJAN_PATH = BASE_PATH / "data" / "Train_vyanjan"
 TEST_VYANJAN_PATH = BASE_PATH / "data" / "Test_vyanjan"
 TRAIN_DIGIT_PATH = BASE_PATH / "data" / "Train_digits"
 TEST_DIGIT_PATH = BASE_PATH / "data" / "Test_digits"

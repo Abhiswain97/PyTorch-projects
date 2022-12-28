@@ -15,7 +15,6 @@ import time
 import logging
 import sys
 from data import transforms
-from pathlib import Path
 
 # check is models folder exists
 (CFG.BASE_PATH / "models").mkdir(exist_ok=True)
@@ -26,7 +25,7 @@ logging.basicConfig(
     filename="train.log",
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO,
-    filemode="w",
+    filemode="a",
 )
 
 
@@ -186,10 +185,12 @@ if __name__ == "__main__":
 
     if args.model_type == "digit":
         model = HNet(num_classses=10)
+        logging.info("Initialized Digit model")
         TRAIN_PATH = CFG.TRAIN_DIGIT_PATH
         CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_DIGIT
     else:
         model = HNet(num_classses=36)
+        logging.info("Initialized Vyanjan model")
         TRAIN_PATH = CFG.TRAIN_VYANJAN_PATH
         CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_VYANJAN
 
@@ -207,8 +208,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         CFG.EPOCHS = args.epochs
         CFG.LR = args.lr
-
-    model = HNet(num_classses=36)
 
     # table
     table = PrettyTable(

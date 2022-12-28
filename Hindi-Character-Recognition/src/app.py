@@ -6,6 +6,7 @@ import numpy as np
 import json
 from model import HNet
 
+
 def classify(model, file, mapping):
     image = Image.open(file).convert("RGB")
     image = np.array(image)
@@ -21,9 +22,13 @@ def classify(model, file, mapping):
         unsafe_allow_html=True,
     )
 
+
 st.markdown("<h1>Hindi Character Recognition<h1>", unsafe_allow_html=True)
 
-option = st.sidebar.radio(label="Classify Hindi Digit or Vyanjan ?", options=["Digit", "Vyanjan"], index=0)
+option = st.sidebar.radio(
+    label="Classify Hindi Digit or Vyanjan ?", options=["Digit", "Vyanjan"], index=0
+)
+
 
 def upload_and_classify(model, mapping):
     file = st.file_uploader("Upload image!")
@@ -34,7 +39,9 @@ def upload_and_classify(model, mapping):
         button = st.button("Predict")
 
         if button:
-            classify(model=model, file=file, mapping=mapping)
+            with st.spinner("Classifying....."):
+                classify(model=model, file=file, mapping=mapping)
+
 
 mapping, model = None, None
 
@@ -56,4 +63,3 @@ else:
         upload_and_classify(model, mapping)
     else:
         st.error("No model exists! First train model!")
-
