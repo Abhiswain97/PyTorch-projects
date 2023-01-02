@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import json
 from model import HNet
-
+import time
 
 def classify(model, file, mapping):
     image = Image.open(file).convert("RGB")
@@ -17,9 +17,8 @@ def classify(model, file, mapping):
 
     _, preds = torch.max(outputs, 1)
 
-    st.markdown(
-        f"<h2>The predicted character is: {mapping[str(preds[0].item())]}</h2>",
-        unsafe_allow_html=True,
+    st.info(
+        f"The predicted character is: {mapping[str(preds[0].item())]}",
     )
 
 
@@ -41,6 +40,7 @@ def upload_and_classify(model, mapping):
         if button:
             with st.spinner("Classifying....."):
                 classify(model=model, file=file, mapping=mapping)
+
 
 
 mapping, model = None, None
