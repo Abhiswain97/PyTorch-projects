@@ -7,6 +7,8 @@ Install the requirements: `pip install -r requirements.txt`
 
 1. Hindi Character Recognition
 
+    ![App](https://user-images.githubusercontent.com/54038552/210263132-2e95ad65-5049-4a8c-b453-2616cbc4df20.gif)
+
     Getting the data:
     - Download the data from [here](https://www.kaggle.com/datasets/suvooo/hindi-character-recognition)
     - Unzip it. You need to split the data into 4 different directories, since we are training for Hindi digits & letters separately.
@@ -20,7 +22,7 @@ Install the requirements: `pip install -r requirements.txt`
     Running the app:
     - Just so, `streamlit run app.py`
     
-    ![App](https://user-images.githubusercontent.com/54038552/210263132-2e95ad65-5049-4a8c-b453-2616cbc4df20.gif)
+    
 
     
 2. AlexNet from scratch
