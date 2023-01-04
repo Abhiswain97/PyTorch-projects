@@ -4,7 +4,7 @@ from torch.optim import SGD, lr_scheduler
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader, random_split
 from torchvision.datasets import ImageFolder
-from model import HNet
+from model import HNet, ResNet18
 import config as CFG
 from tqdm.auto import tqdm
 from prettytable import PrettyTable
@@ -184,12 +184,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.model_type == "digit":
-        model = HNet(num_classses=10)
+        model = HNet(num_classes=10)
         logging.info("Initialized Digit model")
         TRAIN_PATH = CFG.TRAIN_DIGIT_PATH
         CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_DIGIT
     else:
-        model = HNet(num_classses=36)
+        model = HNet(num_classes=36)
         logging.info("Initialized Vyanjan model")
         TRAIN_PATH = CFG.TRAIN_VYANJAN_PATH
         CFG.BEST_MODEL_PATH = CFG.BEST_MODEL_VYANJAN

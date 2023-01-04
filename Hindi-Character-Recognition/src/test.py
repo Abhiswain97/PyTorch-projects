@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 from data import transforms
-from model import HNet
+from model import HNet, ResNet18
 from tqdm import tqdm
 import config as CFG
 from argparse import ArgumentParser
@@ -14,11 +14,11 @@ def test(model_type):
 
     if model_type == "digit":
         test_ds = ImageFolder(root=CFG.TEST_DIGIT_PATH, transform=transforms["test"])
-        model = HNet(num_classses=10)
+        model = HNet(num_classes=10)
         model.load_state_dict(torch.load(CFG.BEST_MODEL_DIGIT))
     else:
         test_ds = ImageFolder(root=CFG.TEST_VYANJAN_PATH, transform=transforms["test"])
-        model = HNet(num_classses=36)
+        model = HNet(num_classes=36)
         model.load_state_dict(torch.load(CFG.BEST_MODEL_VYANJAN))
 
     test_dl = DataLoader(test_ds, batch_size=CFG.BATCH_SIZE)

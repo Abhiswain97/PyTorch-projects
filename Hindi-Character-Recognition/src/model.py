@@ -8,7 +8,7 @@ def calculate_conv_output(IH, IW, KH, KW, P, S):
 
 
 class HNet(nn.Module):
-    def __init__(self, num_classses) -> None:
+    def __init__(self, num_classes) -> None:
         super().__init__()
 
         # 32 x 32 x 3 => 28 x 28 x 16
@@ -18,7 +18,7 @@ class HNet(nn.Module):
         self.conv2 = nn.Conv2d(16, 32, kernel_size=(3, 3))
 
         # 26 x 26 x 32 => num_classes
-        self.fc1 = nn.Linear(26 * 26 * 32, num_classses)
+        self.fc1 = nn.Linear(26 * 26 * 32, num_classes)
 
         self.dropout = nn.Dropout(p=0.5)
 
@@ -33,7 +33,7 @@ class HNet(nn.Module):
 
 
 class ResNet18(nn.Module):
-    def __init__(self, freeze=True):
+    def __init__(self, freeze=True, num_classes=10):
         super(ResNet18, self).__init__()
         self.resnet = resnet18(pretrained=True)
 
@@ -42,7 +42,7 @@ class ResNet18(nn.Module):
             self.freeze_layers()
 
         # new layers by default have requires_grad=True
-        self.resnet.fc = nn.Linear(512, 46)
+        self.resnet.fc = nn.Linear(512, num_classes)
 
     def forward(self, x):
         x = self.resnet(x)
